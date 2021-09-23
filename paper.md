@@ -6,6 +6,7 @@
 
 **2.** 
 `Let D = decimal`
+
 `let d = digit in binary number`
 
 D = (d*2^d) + (d*2^d) + (d*2^d) + (d*2^d) ... + (d*2^d)
