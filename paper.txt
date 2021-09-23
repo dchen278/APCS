@@ -1,1 +1,14 @@
-1. The base is the number of digits that a counting system uses to represent numbers. Example: Binary uses 2 digits, 1 and 0
+0. The base is the number of digits that a counting system uses to represent numbers. Example: Binary uses 2 digits, 1 and 0
+
+1. Binary is the base 2 counting system. We care because the system is simpler to work with and is less expensive than larger bases.
+
+2. Let D = decimal
+let d = digit in binary number
+
+D = (d*2^d) + (d*2^d) + (d*2^d) + (d*2^d) ... + (d*2^d)
+
+3.
+  1. Divide # by 2
+  2. Use integer quotient for next cycle
+  3. Use remainder for binary digit (right to left)
+  4. Repeat until quotient equals 0
