@@ -5,17 +5,25 @@
 **1.** Binary is the base 2 counting system. We care because the system is simpler to work with and is less expensive than larger bases.
 
 **2.** 
-`Let D = decimal`
+1. List powers of `2` for all the digits starting from the right.
+2. Starting from the right, multiply the number by its respective power of `2`.
+3. Find the sum of all the products.
 
-`let d = digit in binary number`
+Example: `100` to decimal
 
-D = (d*2^d) + (d*2^d) + (d*2^d) + (d*2^d) ... + (d*2^d)
+0 -> 0 * 2<sup>0</sup> = 0 \
+0 -> 0 * 2<sup>1</sup> = 0 \ 
+1 -> 1 * 2<sup>2</sup> = 4 \
+        sum -> 4
 
 **3.**
 1. Divide number by `2`
 2. Use integer quotient for next cycle
 3. Use remainder for binary digit (right to left)
 4. Repeat until quotient equals `0`
+
+
+Example: `4` to binary
 
  n/2 | Quotient   | Remainder
 -----|------------|-------------
@@ -24,4 +32,4 @@ D = (d*2^d) + (d*2^d) + (d*2^d) + (d*2^d) ... + (d*2^d)
 1/2  |      0     |      1
 
 
-Answer = 100
+4<sub>2</sub> = 100<sub>10</sub>
