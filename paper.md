@@ -33,3 +33,4 @@ Example: `4` to binary
 
 
 4<sub>2</sub> = 100<sub>10</sub>
+ 
