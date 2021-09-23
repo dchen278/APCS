@@ -23,7 +23,7 @@
   4. Repeat until quotient equals 0
 
 
-Example: 4 to binary
+Example: 4 to binary 
 
      Quotient Remainder
 4/2 |   2    |   0
