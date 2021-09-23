@@ -17,11 +17,11 @@ D = (d*2^d) + (d*2^d) + (d*2^d) + (d*2^d) ... + (d*2^d)
   3. Use remainder for binary digit (right to left)
   4. Repeat until quotient equals 0
 
- n/2   | Quotient | Remainder
+ n/2 | Quotient   | Remainder
 -----|------------|-------------
-4/2 | 2 | 0
-2/2 |   1    |   0
-1/2 |   0    |   1
+4/2  |      2     |      0
+2/2  |      1     |      0
+1/2  |      0     |      1
 
 
 Answer = 100
