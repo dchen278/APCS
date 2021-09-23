@@ -12,10 +12,10 @@
 D = (d*2^d) + (d*2^d) + (d*2^d) + (d*2^d) ... + (d*2^d)
 
 **3.**
-  1. Divide # by 2
-  2. Use integer quotient for next cycle
-  3. Use remainder for binary digit (right to left)
-  4. Repeat until quotient equals 0
+1. Divide number by `2`
+2. Use integer quotient for next cycle
+3. Use remainder for binary digit (right to left)
+4. Repeat until quotient equals `0`
 
  n/2 | Quotient   | Remainder
 -----|------------|-------------
