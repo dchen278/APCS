@@ -1,4 +1,4 @@
-0. The base is the available amount of digits in a counting system. Example: Binary uses 2 digits, 1 and 0; base 10 or decimal uses 10 digits, 0-9; and base 16 or hexadecimal uses 0-9 and A-F.
+0. The base is the available amount of digits in a counting system. Examples: Binary uses 2 digits, 1 and 0; base 10 or decimal uses 10 digits, 0-9; and base 16 or hexadecimal uses 0-9 and A-F.
 
 1. Binary is the base 2 counting system. We care because the system is simpler to work with and uses less time and memory than counting systems with larger bases.
 
