@@ -33,5 +33,5 @@ Example: `4` to binary
 1/2  |      0     |      1
 
 
-4<sub>2</sub> = 100<sub>10</sub>
+4<sub>10</sub> = 100<sub>2</sub>
  
