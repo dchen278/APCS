@@ -4,7 +4,7 @@
 
 **1.** Binary is the base 2 counting system. We care because the system is simpler to work with and is less expensive than larger bases.
 
-**2.** 
+**2.** **Steps**
 1. List powers of `2` for all the digits starting from the right.
 2. Starting from the right, multiply the number by its respective power of `2`.
 3. Find the sum of all the products.
@@ -17,6 +17,7 @@ Example: `100` to decimal
         sum -> 4
 
 **3.**
+**Steps**
 1. Divide number by `2`
 2. Use integer quotient for next cycle
 3. Use remainder for binary digit (right to left)
