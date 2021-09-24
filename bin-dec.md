@@ -12,7 +12,7 @@
 Example: `100` to decimal
 
 0 -> 0 * 2<sup>0</sup> = 0 \
-0 -> 0 * 2<sup>1</sup> = 0 \ 
+0 -> 0 * 2<sup>1</sup> = 0 \
 1 -> 1 * 2<sup>2</sup> = 4 \
         sum -> 4
 
