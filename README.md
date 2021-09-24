@@ -2,7 +2,7 @@
 
 ## Markdown
 
-**0.** The base is the number of digits that a counting system uses to represent numbers. Example: Binary uses 2 digits, 1 and 0
+**0.** The base is the number of digits that a counting system uses to represent numbers. Examples: Binary uses 2 digits, 1 and 0; Decimal uses 10 digits, 0-9.
 
 **1.** Binary is the base 2 counting system. We care because the system is simpler to work with and is less expensive than larger bases.
 
@@ -35,5 +35,5 @@ Example: `4` to binary
 1/2  |      0     |      1
 
 
-4<sub>2</sub> = 100<sub>10</sub>
+4<sub>10</sub> = 100<sub>2</sub>
  
