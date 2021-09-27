@@ -1,0 +1,2 @@
+You need a plain text editor to write code. You will be using a terminal as well.
+Make APCS folder for schoolwork
