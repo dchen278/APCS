@@ -1,3 +1,8 @@
-Java filename's first letter is uppercase. Use the javac command to compile
-java files. Carefully check errors for hints on where you messed up. 
-Use java {filename} to run the file
+Declare the variables that assign them
+
+int intval
+intval = 5
+
+OR
+
+int intval = 5
