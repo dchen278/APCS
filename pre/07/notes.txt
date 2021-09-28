@@ -1,0 +1,32 @@
+An array is a sequence of values and the values in the array are called elements
+All values in an array must have the same type
+
+Example
+int[] counts
+double[] values
+
+You have to use the new operator to create the array
+counts = new int[4]
+
+The [] operator selects elements from the array 
+counts[0] returns the first element
+
+You can't directly print arrays you would need some kind of method to display it
+
+If we copy an array, any change made to one will be seen by the other
+If we want a new array and not a reference, we have to create a new array and copy the elements
+from the old to the new
+
+We can get the length of an array using the .length property
+
+Looping through the elements of an array is called traversal. Another way is search which traverses
+an array looking for a particular element. Another traversal is a reduce operation which reduces an array
+of values down to single value ex. finding the sum of the elements
+
+java.util.Random produces pseudorandom numbers
+
+We can rewrite the loop to display elements of an array using this
+for (int value : values) {
+    System.out.println(value);
+}
+

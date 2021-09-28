@@ -1,0 +1,1 @@
+We can specify any other data type as the RETURNTYPE

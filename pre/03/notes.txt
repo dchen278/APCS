@@ -1,0 +1,15 @@
+Java is an Object Oriented language. Everything is written inside
+an object. 
+
+Anatomy of a method
+public static RETURNTYPE NAME(ARGUMENTS){
+ BODY
+}
+
+when the RETURNTYPE is void, it means that the method does not 
+return anything
+
+
+main method is required
+
+arguments are a list of arguments sent to the method

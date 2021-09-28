@@ -1,0 +1,2 @@
+If you don't have multiple statements in each condition statement, then 
+you dont need the section curly braces

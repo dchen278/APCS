@@ -1,0 +1,10 @@
+Java has loops that are very similar to javascript
+
+while (boolean) {
+    statements
+}
+
+A for loop has the following form
+for (INITIALIZATION, TEST, INCREMENT) {
+    do stuff
+}
