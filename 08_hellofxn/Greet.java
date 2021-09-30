@@ -1,4 +1,7 @@
 public class Greet {
+	/*
+	DISCOVERIES
+	*/
 	public static void main(String[] args) {
 		greet("Jason");
 		greet("Jaylen");
