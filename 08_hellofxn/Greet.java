@@ -2,7 +2,7 @@
 David Chen
 APCS
 HW08 -- Refactor Freshie Zero - Changed method for string concatenation and invoked it in main method
-2021-9-31
+2021-9-30
 
 DISCOVERIES
 A method signature consists the method name and the method parameters in order
