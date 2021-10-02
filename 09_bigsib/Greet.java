@@ -1,15 +1,19 @@
-package BigSib;
+/*
+David Chen
+APCS
+HW09 -- What are BigSibs good for?
+2021-10-01
+
+DISCOVERIES
+You can use methods from another java file as long as it is in the same directory
+UNRESOLVED QUESTIONS
+No questions were unresolved
+*/
+
 
 public class Greet {
-	/*
-	DISCOVERIES
-	A method signature consists the method name and the method parameters in order
-	UNRESOLVED QUESTIONS
-	No questions were unresolved
-	*/
-	
-	public static void main(String[] args) {
-		BigSib.greet("Jason");
+		public static void main(String[] args) {
+		BigSib.greet("Yat Long");
 		BigSib.greet("Jaylen");
 		BigSib.greet("Mr. Mykolyk");
 	}

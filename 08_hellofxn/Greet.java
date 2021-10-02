@@ -1,11 +1,18 @@
-public class Greet {
-	/*
-	DISCOVERIES
-	A method signature consists the method name and the method parameters in order
+/*
+David Chen
+APCS
+HW08 -- Refactor Freshie Zero - Changed method for string concatenation and invoked it in main method
+2021-9-31
 
-	UNRESOLVED QUESTIONS
-	No questions were unresolved
-	*/
+DISCOVERIES
+A method signature consists the method name and the method parameters in order
+
+UNRESOLVED QUESTIONS
+No questions were unresolved
+*/
+
+
+public class Greet {
 	public static void main(String[] args) {
 		greet("Jason");
 		greet("Jaylen");
