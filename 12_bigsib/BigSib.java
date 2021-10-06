@@ -18,7 +18,7 @@ public class BigSib {
         return helloMsg + " " +  name;
 	}
 
-    public void setHelloMsg(String name) {
-        helloMsg = name;
+    public void setHelloMsg(String msg) {
+        helloMsg = msg;
     }
 }
