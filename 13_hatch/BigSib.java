@@ -2,11 +2,13 @@
 BDY: David Chen, Yat Long Chan, Ben Belotser, Eugene, Bob, TwoFace
 David Chen
 APCS
-HW12: On Elder Individuality and the Elimination of Radio Fuzz
-2021-10-05
+HW13: Where do BigSibs Come From?
+2021-10-06
 
 DISCO
-Instance variables can only be used in non static methods
+Constructors are used to initialize objects and set initial values for
+object attributes. It should be the first method in the class. This \
+constructor is called when the Class is first created.
 QCC
 None
 */
