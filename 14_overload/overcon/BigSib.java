@@ -16,6 +16,10 @@ None
 public class BigSib {
     String helloMsg;
 
+    public BigSib() {
+        helloMsg = "What's up";
+    }
+
     public BigSib(String greeting) {
         setHelloMsg(greeting);
     }
