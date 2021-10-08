@@ -1,14 +1,13 @@
 /*
-BDY: David Chen, Yat Long Chan, Ben Belotser, Eugene, Bob, TwoFace
+The LDM Combo: Lea Kwok, David Chen, and Max Schneider
 David Chen
 APCS
 HW14: Customize Your Creation
 2021-10-07
 
 DISCO
-Constructors are used to initialize objects and set initial values for
-object attributes. It should be the first method in the class. This \
-constructor is called when the Class is first created.
+Arguments can be passed to constructors so that the object can be created with different
+initial values.
 QCC
 None
 */

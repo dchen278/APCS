@@ -6,9 +6,8 @@ HW14: Customize Your Creation
 2021-10-07
 
 DISCO
-Constructors are used to initialize objects and set initial values for
-object attributes. It should be the first method in the class. This \
-constructor is called when the Class is first created.
+If no argument is provided to the constructor, all instances created will have the same
+initialization and greeting.
 QCC
 None
 */

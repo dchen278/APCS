@@ -1,13 +1,13 @@
 /*
-BDY: David Chen, Yat Long Chan, Ben Belotser, Eugene, Bob, TwoFace
+The LDM Combo: Lea Kwok, David Chen, and Max Schneider
 David Chen
 APCS
 HW14: Customize Your Creation
 2021-10-07
 
 DISCO
-If no argument is provided to the constructor, all instances created will have the same
-initialization and greeting.
+Arguments can be passed to constructors so that the object can be created with different
+initial values.
 QCC
 None
 */

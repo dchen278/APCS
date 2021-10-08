@@ -1,5 +1,5 @@
 /*
-BDY: David Chen, Yat Long Chan, Ben Belotser, Eugene, Bob, TwoFace
+The LDM Combo: Lea Kwok, David Chen, and Max Schneider
 David Chen
 APCS
 HW14: Customize Your Creation
