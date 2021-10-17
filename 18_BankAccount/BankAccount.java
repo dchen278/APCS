@@ -7,9 +7,9 @@ HW18: CPA-One
 DISCO
 UML diagrams are very helpful for understanding and creating methods.
 QCC
-None
+Can integers start be something like 0004 or would it be registered as 4?
 
-Downtown Leopard Rocks 
+Team Downtown Leopard Rocks’s Latest and Greatest Q2 Response: 
 */
 
 public class BankAccount {
@@ -40,7 +40,7 @@ public class BankAccount {
 	}
 
 	public void printInfo(int accNum, String pass) {
-		if(accountNum == accNum && password == pass) {
+		if (accountNum == accNum && password == pass) {
 			System.out.println("Your name is " + holderName);
 			System.out.println("Your balance is " + balance);
 			System.out.println("Your account number is " + accountNum);
@@ -60,9 +60,13 @@ public class BankAccount {
 	}
 
 	public void withdraw(int amount, int accNum, int inputtedPin) {
-		if (accountNum == accNum && inputtedPin == pin ) {
-			balance -= amount;
-			System.out.println("Successfully withdrawn. Your balance is $" + balance);
+		if (accountNum == accNum && inputtedPin == pin) {
+			if (balance >= amount) {
+				balance -= amount;
+				System.out.println("Successfully withdrew. Your balance is $" + balance);
+			} else {
+				System.out.println("Insufficient funds");
+			}
 		} else {
 			System.out.println("Your account number or pin doesn't match");
 		}
@@ -80,9 +84,10 @@ public class BankAccount {
 		bofa.setAccountNum(123456789);
 		bofa.setBalance(0);
 
-		bofa.deposit(420000, 123456789);
+		bofa.deposit(282, 123456789);
 		bofa.printInfo(123456789, "abc123");
-		bofa.withdraw(12090, 123456789, 1234);
-		bofa.withdraw(12090, 123456789, 12324); //wrong pin
+		bofa.withdraw(21, 123456789, 1234);
+		bofa.withdraw(23, 123456789, 12324); // wrong pin
+		bofa.withdraw(300, 123456789, 1234); // insufficient funds
 	}
 }
