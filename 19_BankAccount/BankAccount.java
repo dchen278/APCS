@@ -49,7 +49,7 @@ public class BankAccount {
     }
 
     public int setAcctNum(int newAcctNum) {
-        if (newAcctNum >= 100000000 && newAcctNum < 999999998) {
+        if (newAcctNum >= 100000000 && newAcctNum <= 999999998) {
             int oldAcctNum = acctNum;
             acctNum = newAcctNum;
             return oldAcctNum;
