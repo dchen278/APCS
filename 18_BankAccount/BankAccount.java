@@ -5,11 +5,21 @@ HW18: CPA-One
 2021-10-16
 
 DISCO
-UML diagrams are very helpful for understanding and creating methods.
+- UML diagrams are very helpful for understanding and creating methods.
+- We can print out instance variables of an object. Methods within a class can simply reference instance variables of the same class.
+
 QCC
-Can integers start be something like 0004 or would it be registered as 4?
+- We were thinking of how to limit PINs to 4 digits and account numbers to 9 digits. Our initial idea was to check if 999 < pin < 10000, but we realized that this condition doesn’t allow for PINs that start with 0s. Another idea would be to simply check if pin < 10000, but we then realized that using the datatype int for PIN wouldn’t store 0001 as 0001. It would instead be stored as 1. What other methods of checking the 4 digit requirement or other datatypes would help resolve this issue?
+- We did develop part of a test for Q3. However, we are uncertain what the exact indicator of failure in this test would be. Would it be a compile time error, a runtime error, a specific printed message, or something else?
+- For methods that set values of instance variables (such as setHolderName, setPassword), we found it tedious and slightly inefficient to make a separate name for the parameters. For example, to set holderName’s value, we had to name the parameter “name.” Is there another way to reference instance variables and parameters while still making it clear which is the instance variable and which is the parameter?
 
 Team Downtown Leopard Rocks’s Latest and Greatest Q2 Response: 
+A class can still be initialized with `new className()` without a default constructor and that means that Java does provide a default constructor
+
+Team Downtown Leopard Rocks’s Latest and Greatest Q3 Response: 
+You can output a string representation of an object by using the `toString()` method. 
+Ex. `System.out.println(myObject.toString());`
+And then check forr errors and the printed output
 */
 
 public class BankAccount {
@@ -70,6 +80,10 @@ public class BankAccount {
 		} else {
 			System.out.println("Your account number or pin doesn't match");
 		}
+	}
+
+	public String info(Object obj) {
+		return obj
 	}
 
 	public static void main(String[] args) {
