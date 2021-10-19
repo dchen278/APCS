@@ -12,7 +12,6 @@ DISCO
 
 QCC
 - Does Java allow for a way to check if an account number is already associated with another instance of the class?
-- 
 */
 
 public class BankAccount {
