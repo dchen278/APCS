@@ -82,9 +82,16 @@ public class BankAccount {
 		}
 	}
 
-	public String info(Object obj) {
-		return obj
-	}
+	public String toString() {
+        String retStr = "\nAccount info:\n=======================";
+        retStr = retStr + "\nName: " + holderName;
+        retStr = retStr + "\nPassword: " + password;
+        retStr = retStr + "\nPIN: " + pin;
+        retStr = retStr + "\nAccount Number: " + accountNum;
+        retStr = retStr + "\nBalance: " + balance;
+        retStr = retStr + "\n=======================";
+        return retStr;
+    }
 
 	public static void main(String[] args) {
 		BankAccount bofa = new BankAccount();

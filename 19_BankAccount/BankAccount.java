@@ -1,10 +1,19 @@
-/**
- * Clyde "Thluffy" Sinclair APCS pd0 HW18 -- building a more meaningful class
- * 2021-10-18 instance variables for storing... account holder's full name
- * account password 4-digit PIN 9-digit account number account balance and
- * methods for... setting each attribute printing out all of an account’s info
- * at once depositing money withdrawing money
- **/
+/*
+Downtown Leopard Rocks: David Chen, Lea Kwok, Raven Tang
+APCS
+HW19: Mo Money Mo Problems ...MORE AWESOME
+10-18-2021
+
+DISCO
+- We can overwrite the built-in methods of a class. Ex. We can override the toString() method with our own.
+- We learned that we can also withdraw negative amounts.
+- It is helpful to add comments with expected values forr test cases
+- It is also helpful to have a separate line for each test case for each method.
+
+QCC
+- Does Java allow for a way to check if an account number is already associated with another instance of the class?
+- 
+*/
 
 public class BankAccount {
 
@@ -107,71 +116,57 @@ public class BankAccount {
         BankAccount ba = new BankAccount();
 
         // test setName()
-        System.out.println(ba.setName("DLR"));
+        System.out.println(ba.setName("DLR")); // expected: null
         ba.setName("RLD");
-        System.out.println(ba.name);
+        System.out.println(ba.name); // expected: RLD
         System.out.println(ba.toString());
 
         // test setPasswd()
-        System.out.println(ba.setPasswd("abcdefghi"));
+        System.out.println(ba.setPasswd("abcdefghi")); // expected: null
         ba.setPasswd("6544635");
-        System.out.println(ba.passwd);
+        System.out.println(ba.passwd); // expected: 6544635
         System.out.println(ba.toString());
 
         // test setPin()
         short newPin = 2344;
-        System.out.println(ba.setPin(newPin));
-        // can a pin be more than 4 digits? (no)
-        // newPin = 543444;
-        // ba.setPin(newPin);
-        // System.out.println(ba.pin);
-        // can a pin be less than 4 digits? (yes)
+        System.out.println(ba.setPin(newPin)); // expected: 0
         newPin = 234;
-        ba.setPin(newPin);
-        System.out.println(ba.pin);
+        ba.setPin(newPin); // expected: "Pin number must be 4 digits and start with 1"
+        System.out.println(ba.pin); // expected: 9999
         System.out.println(ba.toString());
 
         // test setAcctNum()
-        System.out.println(ba.setAcctNum(123456789));
-        ba.setAcctNum(3424);
-        System.out.println(ba.acctNum);
-        // can acctNum be more than 9 digits? (no)
-        // ba.setAcctNum(0123456789);
-        // System.out.println(ba.acctNum);
-        // System.out.println(ba.toString());
+        System.out.println(ba.setAcctNum(123456789)); // expected: 0
+        ba.setAcctNum(3424); // expected: "Account number must be 9 digits and start with 1"
+        System.out.println(ba.acctNum); // expected: 999999999
 
         // test setBalance()
-        System.out.println(ba.setBalance(333));
+        System.out.println(ba.setBalance(333)); // expected: 0
         ba.setBalance(234.34);
-        System.out.println(ba.balance);
+        System.out.println(ba.balance); // expected: 234.34
         System.out.println(ba.toString());
 
         // test deposit()
         ba.deposit(3434);
-        System.out.println(ba.balance);
+        System.out.println(ba.balance); // expected: 3668.34
         ba.deposit(342.34);
-        System.out.println(ba.balance);
+        System.out.println(ba.balance); // expected: 4010.68
         System.out.println(ba.toString());
 
         // test withdraw()
         ba.withdraw(12);
-        System.out.println(ba.balance);
-        ba.withdraw(5000);
-        System.out.println(ba.balance);
-        // can withdrawl amount be neg? (yes)
+        System.out.println(ba.balance); // expected: 3998.68
         ba.withdraw(-343);
-        System.out.println(ba.balance);
-        ba.withdraw(43243.43);
-        System.out.println(ba.balance);
+        System.out.println(ba.balance); // expected: 4341.68
+        ba.withdraw(43243.43); // expected: Insufficient funds.
+        System.out.println(ba.balance); // expected: 4341.68
         System.out.println(ba.toString());
 
+        /*
+         * expected: Name: RLD Password: 6544635 PIN: 9999 Account Number: 999999999
+         * Balance: 4341.68
+         */
         System.out.println(ba.toString());
-
-        // test authenticate()
-        System.out.println(ba.authenticate(123456789, "6544635"));
-        System.out.println(ba.authenticate(123456789, "6522335"));
-
 
     }// end main()
-
 }// end class BankAccount
