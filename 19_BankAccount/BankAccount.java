@@ -7,7 +7,7 @@ HW19: Mo Money Mo Problems ...MORE AWESOME
 DISCO
 - We can overwrite the built-in methods of a class. Ex. We can override the toString() method with our own.
 - We learned that we can also withdraw negative amounts.
-- It is helpful to add comments with expected values forr test cases
+- It is helpful to add comments with expected values for test cases
 - It is also helpful to have a separate line for each test case for each method.
 
 QCC
