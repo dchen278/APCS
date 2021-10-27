@@ -10,10 +10,10 @@
  ***/
 
 public class Repeater {
-    public static String fenceW(int n) {
+    public static String fenceW(int numPosts) {
         int counter = 1;
         String fence = "|";
-        while (counter < n) {
+        while (counter < numPosts) {
             fence += "--|";
             counter++;
         }
