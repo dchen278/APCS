@@ -7,6 +7,11 @@
    QCC: N/A
 
    ALGO: 
+   0. If a is equal to b, return a
+   1. Else if a is greater than b, we would then find the gcd of a-b and b
+   2. Else, we would find the gcd of a and b-a
+   3. This is called recursively until a or b are equal to 1
+   3. Return the gcd of the two numbers
  */
 
 public class Stats {
