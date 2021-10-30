@@ -6,12 +6,30 @@
 public class xyBalance {
 
     public boolean xyBalance(String str) {
-        
+        boolean x = false;
+        boolean y = false;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'x' && y) {
+                y = false;
+                x = true;
+            } else if (str.charAt(i) == 'x') {
+                x = true;
+            } else if (str.charAt(i) == 'y' && x) {
+                y = true;
+            }
+        }
+        if (x == false) {
+            y = true;
+        }
+        return y;
     }
 
     public static void main(String[] args) {
         xyBalance xyBalance = new xyBalance();
-        System.out.println(xyBalance.xyBalance("xxy"));
-        System.out.println(xyBalance.xyBalance("xyx"));
+        System.out.println(xyBalance.xyBalance("aaxbby"));
+        System.out.println(xyBalance.xyBalance("aaxbb"));
+        System.out.println(xyBalance.xyBalance("yaaxbb"));
+        System.out.println(xyBalance.xyBalance("bbb"));
     }
 }
