@@ -1,4 +1,3 @@
-import javax.xml.namespace.QName;
 
 // Given two strings, a and b, create a bigger string made of the first char of
 // a, the first char of b, the second char of a, the second char of b, and so
