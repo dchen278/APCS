@@ -3,7 +3,7 @@ Downtown Leopard Rocks: David Chen, Lea Kwok, Raven Tang
 APCS
 HW31: Otnay Ybay ethay Airhay Onway Ymay Inneechay Inchay Inchay
 11-03-2021
-Time Spent: 20 minutes
+Time Spent: 0.6 hours
 DISCO
   - The final keyword is used to indicated that a method or variable cannot be changed after
     it has been declared.
