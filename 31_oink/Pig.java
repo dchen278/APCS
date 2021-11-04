@@ -7,6 +7,8 @@ Time Spent: 20 minutes
 DISCO
   - The final keyword is used to indicated that a method or variable cannot be changed after
     it has been declared.
+  - Instead creating String variables for each vowel, combining all of them into one instance variable that cannot be changed saved a lot of time and space.
+  - When testing cases of a method that return an empty String, if the output is printed in Terminal, it is still apparent that the correct output is displayed because there is an empty line.
   - We can also use indexOf to find the index of a substring in a string.  
   - We can call upon methods that we already wrote in the new methods we're creating.
 QCC
@@ -99,7 +101,7 @@ public class Pig {
 
         System.out.println("Is a vowel? " + isAVowel("a"));
         System.out.println("Is b vowel? " + isAVowel("b"));
-    
+
         System.out.println("How many vowels in cat? " + countVowels("cat"));
         System.out.println("How many vowels in zzz? " + countVowels("zzz"));
 
@@ -108,7 +110,6 @@ public class Pig {
 
         System.out.println("All vowels in cat? " + allVowels("cat"));
         System.out.println("All vowels in spaghetti? " + allVowels("spaghetti"));
-        
 
     }// end main()
 
