@@ -8,8 +8,12 @@ DISCO
   - The final keyword is used to indicated that a method or variable cannot be changed after
     it has been declared.
   - We can also use indexOf to find the index of a substring in a string.  
+  - We can call upon methods that we already wrote in the new methods we're creating.
 QCC
- -N/A
+  - When we check if a letter is in a String, we have to state the precondition that letter.length() == 1 because we don't know how to compare chars and Strings yet.
+- Why is VOWELS in all caps? Is that a convention for naming final instance variables?
+- Why do we have a countVowel() and a hasVowel() method if a positive countVowel() return value implies a true return for hasVowel()?
+
 */
 
 public class Pig {
