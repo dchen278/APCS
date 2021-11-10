@@ -12,7 +12,7 @@ HOW WE UTILIZED SCANNER DEMO
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
 - words.in runs out of inputs for the program.
 NEW IN v6
-- Changed code so that it won't crash when there is an extra space at the end of a string.
+- Changed code so that it won't crash when there is an extra space at the end or front of a string.
 */
 
 import java.util.Scanner;
@@ -170,8 +170,15 @@ public class Pig {
         return ans + wordTranslate(p);
     }
 
+    /*
+     * ===================================== String trim(String) -- returns
+     * a string with leading and trailing spaces removed pre: w != null post:
+     * trim("  apple  ") --> "apple" 
+     * trim("apple") --> "apple"
+     * =====================================
+     */
     public static String trim(String p) {
-        // remove extra spaces at the end of a line
+        // remove extra spaces at the end or front of a line
         while (p.substring(p.length() - 1).equals(" ")) {
             p = p.substring(0, p.length() - 1);
         }
