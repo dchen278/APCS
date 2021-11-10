@@ -4,15 +4,18 @@ L00 -- Etterbay Odingcay Oughthray Ollaborationcay
 11-09-21
 time spent: 0.5 hour + class time
 DISCO
-- the String wrapper class has methods for making a string uppercase and lowercase.
+- We need to close the scanner to prevent memory leaks
 QCC
 - The program will not run correctly if there is an extra space at the end of a string.
+- Can we use try catch block to catch the exceptions?
 HOW WE UTILIZED SCANNER DEMO
 - We used scanner to test our program with inputs in the terminal as well as test cases in words.in.
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
 - words.in runs out of inputs for the program.
-NEW IN v4
-- Scanner and accounting for uppercase in middle of words.
+NEW IN v5
+- Close scanner to prevent memory leak.
+- Adjust for certain test cases.
+- Change syntax for better readability.
 */
 
 import java.util.Scanner;
@@ -86,11 +89,12 @@ public class Pig {
      * true isPunc("b") -> false =====================================
      */
     public static String firstVowel(String w) {
-
         String ans = "";
 
-        if (hasAVowel(w)) // Q: Why this necess?
+        // Q: Why this necess?
+        if (hasAVowel(w)) {
             ans = allVowels(w).substring(0, 1);
+        }
 
         return ans;
     }
@@ -121,10 +125,14 @@ public class Pig {
     public static String engToPig(String w) {
 
         String ans = "";
-        if (beginsWithVowel(w))
-            ans = w + "way";
-
-        else {
+        if (beginsWithVowel(w)) {
+            // Consider y a vowel when appropriate. ( yellow -> ellowyay, tryst -> ysttray )
+            if ("Yy".indexOf(w.substring(0, 1)) != -1) {
+                ans = w.substring(1, w.length()) + "yay";
+            } else {
+                ans = w + "way";
+            }
+        } else {
             int vPos = w.indexOf(firstVowel(w));
             ans = w.substring(vPos) + w.substring(0, vPos) + "ay";
         }
@@ -142,7 +150,6 @@ public class Pig {
 
     public static String wordTranslate(String w) {
         String ans = "";
-        String word = "";
         if (puncIndex(w) == (w.length() - 1)) {
             ans = puncTranslate(w);
         } else {
@@ -177,7 +184,6 @@ public class Pig {
      */
     public static boolean isUpperCase(String letter) {
         return CAPS.indexOf(letter) != -1;
-
     }
 
     /*
@@ -201,7 +207,6 @@ public class Pig {
      * =====================================
      */
     public static boolean beginsWithUpper(String w) {
-
         return isUpperCase(w.substring(0, 1));
     }
 
@@ -212,5 +217,7 @@ public class Pig {
             String translatedLine = totalTranslate(line);
             System.out.println(line + " -> " + translatedLine);
         }
+        // need to close to prevent resource leak
+        sc.close();
     }
 }// end class Pig

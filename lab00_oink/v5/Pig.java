@@ -4,9 +4,10 @@ L00 -- Etterbay Odingcay Oughthray Ollaborationcay
 11-09-21
 time spent: 0.5 hour + class time
 DISCO
-- the String wrapper class has methods for making a string uppercase and lowercase.
+- We need to close the scanner to prevent memory leaks
 QCC
 - The program will not run correctly if there is an extra space at the end of a string.
+- Can we use try catch block to catch the exceptions?
 HOW WE UTILIZED SCANNER DEMO
 - We used scanner to test our program with inputs in the terminal as well as test cases in words.in.
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
@@ -14,6 +15,7 @@ WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
 NEW IN v5
 - Close scanner to prevent memory leak.
 - Adjust for certain test cases.
+- Change syntax for better readability.
 */
 
 import java.util.Scanner;
