@@ -6,9 +6,12 @@ HW34: A Pirate's Life for Me
 time elapsed: 0.7 hours
 
 DISCO:
--java.util.Arrays has a built in 
+-java.util.Arrays has a built in Arrays to String method.
+-returning 1 + freqRec(arr, start + 1, target) allows us to add to a counter while continuing to make recursive calls.
+-when typecasting a random number, it is crucial to say (int) (Math.random() * 100) rather than (int) Math.random() * 100 because the latter typecasts the random number between 0 and 1 which will always be 0.
+-
 QCC:
-- 
+-can we make a linSearchR or freqRec without the additional parameter start?
 */
 
 import java.math.*;
@@ -20,9 +23,9 @@ public class Loopier {
     public static void main(String[] args) {
         Loopier tim = new Loopier();
         tim.populateArray(paul);
-        // System.out.println(Arrays.toString(paul));
-        // System.out.println(tim.arrToString(paul));
-        // System.out.println(tim.linSearch(paul, 14));
+        System.out.println(Arrays.toString(paul));
+        System.out.println(tim.arrToString(paul));
+        System.out.println(tim.linSearch(paul, 14));
         System.out.println(tim.linSearchR(paul, 0, paul[3]));
         System.out.println(tim.linSearchR(paul, 0, 14));
         System.out.println(tim.freq(paul, paul[3]));
