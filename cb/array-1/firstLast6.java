@@ -7,10 +7,9 @@ public class firstLast6 {
 
     public static void main(String[] args) {
         firstLast6 test = new firstLast6();
-        System.out.println(test.firstLast6(new int[]{1,2,6}));
-        System.out.println(test.firstLast6(new int[]{6,1,2,3}));
-        System.out.println(test.firstLast6(new int[]{13,6,1,2,3}));
+        System.out.println(test.firstLast6(new int[] { 1, 2, 6 }));
+        System.out.println(test.firstLast6(new int[] { 6, 1, 2, 3 }));
+        System.out.println(test.firstLast6(new int[] { 13, 6, 1, 2, 3 }));
     }
-
 
 }
