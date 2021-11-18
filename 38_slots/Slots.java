@@ -42,7 +42,7 @@ public class Slots {
    * separated by tabs =====================================
    */
   public String toString() {
-    return _fruits[0] + "--" + _fruits[1] + "--" + _fruits[2];
+    return _fruits[0] + "\t" + _fruits[1] + "\t" + _fruits[2];
   }
 
   /*
