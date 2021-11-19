@@ -1,0 +1,45 @@
+David Chen
+APCS
+HW36 -- All Quacked Up
+2021-11-17
+time spent: 0.3 hours
+
+ThinkJava Notes
+
+Three Main Types of Errors
+    - Compile time errors indicate syntax errors (ex. missing parenthesis)
+    - Runtime errors - errors that occur during runtime (ex. infinite recursion)
+    - Logic Errors - the code is not doing what you meant it to doing
+
+Compile-time Errors
+    - Always use incremental development
+    - Only the first error message is truly reliable
+    - Read errors carefully and make sure the code is formatted properly
+        - Check that all parenthesis are balanced
+        - And check for any other common syntax errors
+    - If you can't see the error that the compiler is referring to, make sure
+    that it is the same version
+        - Make a copy of the file(ex. make a copy called {FILENAME}.old)
+    - Don't always listen to what the compiler is telling you to do
+
+Runtime Errors
+    - If the program is "hanging", then it is probably in an infinite loop/recursion
+        - Try adding print statements that indicate entering and exiting the loop
+        - Most of the time infinite recursion will cause a StackOverflowError
+    - Always check if there's base case
+    - Add print statements to see the flow of the execution
+    - Exception Errors
+        - Examine the line in the code and check if the variable is null or if the 
+        index is out of bounds, etc
+    - Try simplifying print statements
+
+Logic Errors
+    - Try summoning a mental image of the code and what it's supposed to do
+        - KtS are also very helpful!
+    - Use == to check if objects are identical and .equals to check for equivalence
+    - Split complex expressions into variables
+    - If you are really stuck, try getting away from the computer for a few minutes
+        - Bring someone else in to look at your code
+    - Keep in mind even the best programmers get stuck
+    - If you found the bug, take a min to see waht caused the bug and how you could have 
+    found it faster    
