@@ -26,16 +26,21 @@ public class Protagonist {
         specialized = false;
     }
 
-    public void attacked(int d) {
+    public int attacked(int d) {
+        int damageTaken = 0;
         if (!armor) {
             hp -= d * 2;
+            damageTaken = d * 2;
         } else {
             hp -= d;
+            damageTaken = d;
         }
 
         if (hp <= 0) {
             isAlive = false;
         }
+
+        return damageTaken;
     }
 
 
@@ -51,14 +56,14 @@ public class Protagonist {
         int damage = 0;
         if (specialized) {
             if (rollDice(2, 6)) {
-                damage = (int) (Math.random() * 100) + 300;
+                damage = (int) (Math.random() * 100) + 500;
             } else {
                 armor = false;
-                damage = (int) (Math.random() * 200);
+                damage = (int) (Math.random() * 200 + 200);
             }
         } else {
             armor = true;
-            damage = (int) (Math.random() * 300);
+            damage = (int) ((Math.random() * 300) + 300);
         }
         target.attacked(damage);
         return damage;
