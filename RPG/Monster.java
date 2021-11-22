@@ -3,10 +3,6 @@ public class Monster {
     private int hp = 2000;
     private int damage = 200;
 
-    public static void main(String[] args) {
-        
-    }
-
     public Boolean isAlive() {
         return isAlive;
     }
