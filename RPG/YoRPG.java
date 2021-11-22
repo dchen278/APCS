@@ -156,18 +156,15 @@ public class YoRPG {
         // As usual, move the begin-comment bar down as you progressively
         // test each new bit of functionality...
 
-        /*  
-         * ================================================ //loading... YoRPG game =
-         * new YoRPG();
-         * 
-         * int encounters = 0;
-         * 
-         * while( encounters < MAX_ENCOUNTERS ) { if ( !game.playTurn() ) break;
-         * encounters++; System.out.println(); }
-         * 
-         * System.out.println( "Thy game doth be over." );
-         * ================================================
-         */
+        YoRPG game = new YoRPG();
+        int encounters = 0;
+        while (encounters < MAX_ENCOUNTERS) {
+            if (!game.playTurn()) {
+                break;
+            }
+            encounters++;
+            System.out.println();
+        }
+        System.out.println("Thy game doth be over.");
     }// end main
-
 }// end class YoRPG

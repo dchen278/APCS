@@ -1,7 +1,7 @@
 public class Monster {
     private Boolean isAlive = true;
     private int hp = 2000;
-    private int damage = 150;
+    private int damage = 300;
 
     public static void main(String[] args) {
         
@@ -12,12 +12,21 @@ public class Monster {
     }
 
     public int attack(Protagonist target) {
-        return 0;
+        int actualDamage = (int) (Math.random() * damage + 200);
+        target.attacked(actualDamage);
+        // target.hp -= damage;
+        return actualDamage;
+    }
+
+    public int getHp() {
+        return hp;
     }
 
     public void attacked(int damage) {
         hp -= damage;
-        System.out.println(hp);
+        if (hp <= 0) {
+            isAlive = false;
+        }
     }
 
 }

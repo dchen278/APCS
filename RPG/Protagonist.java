@@ -4,17 +4,10 @@ public class Protagonist {
     private int hp = 2000;
     // private int damage = 300;
     private Boolean specialized;
-
-    public static void main(String[] args) {
-        
-    }
+    private Boolean armor = true;
 
     public Protagonist(String GivenName) {
         name = GivenName;
-    }
-
-    public int chance(int chance) {
-        return (int) (Math.random() * chance);
     }
 
     public String getName() {
@@ -33,17 +26,41 @@ public class Protagonist {
         specialized = false;
     }
 
-    public void attacked(int damage) {
-        hp -= damage;
-        System.out.println(hp);
+    public void attacked(int d) {
+        if (!armor) {
+            hp -= d * 2;
+        } else {
+            hp -= d;
+        }
+
+        if (hp <= 0) {
+            isAlive = false;
+        }
+    }
+
+
+    public Boolean rollDice(int numDice, int numSides) {
+        int roll = 0;
+        for (int i = 0; i < numDice; i++) {
+            roll += (int) (Math.random() * numSides) + 1;
+        }
+        return roll > numSides / 2;
     }
 
     public int attack(Monster target) {
-        if(specialized) {
-            if(chance(10) > ) {
-
+        int damage = 0;
+        if (specialized) {
+            if (rollDice(2, 6)) {
+                damage = (int) (Math.random() * 100) + 300;
+            } else {
+                armor = false;
+                damage = (int) (Math.random() * 200);
             }
+        } else {
+            armor = true;
+            damage = (int) (Math.random() * 300);
         }
-        target.attacked(damage); 
+        target.attacked(damage);
+        return damage;
     }
 }
