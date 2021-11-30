@@ -12,6 +12,8 @@
 
 # since we have no use for json files atm
 *.json
+*.iml
+.idea/
 
 # Package Files #
 *.jar
