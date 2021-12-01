@@ -23,7 +23,15 @@ public class TwoDimArray {
     public static void print1(int[][] a) {
         // YOUR IMPLEMENTATION HERE
         for (int i = 0; i < a.length; i++) {
-            System.out.println(arrToString(a[i]));
+            String s = "[";
+            for (int j = 0; j < a[i].length; j++) {
+                s += a[i][j];
+                if (j != a[i].length - 1) {
+                    s += ", ";
+                }
+            }
+            s += "]";
+            System.out.println(s);
         }
     }
 
@@ -41,9 +49,16 @@ public class TwoDimArray {
     // postcond: prints each row of 2D int array a on its own line
     // uses a FOREACH loop
     public static void print2(int[][] a) {
-        // YOUR IMPLEMENTATION HERE
         for (int[] arr : a) {
-            System.out.println(arrToString(arr));
+            String s = "[";
+            for (int i = 0; i < arr.length; i++) {
+                if (i == arr.length - 1) {
+                    s = s + arr[i] + "]";
+                } else {
+                    s = s + arr[i] + ", ";
+                }
+            }
+            System.out.println(s);
         }
     }
 
