@@ -1,16 +1,11 @@
 /*
 Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
 APCS pd7
-HW41 -- Be Rational
-12/1/21
-time elapsed: 0.3 hours
+HW42 -- Be Rational
+12/2/21
+time elapsed: 0.1 hours
 DISCO:
-When we say r.multiply(s), in the multiply method, this refers to r and the parameter num refers to s
-If we set rational r to x/0, then r defaults to the word Infinity
-To fix this, in the divide and multiply methods we added a if statement that checks if the denominator is 0, and if it is, it returns from the method
 QCC:
-I thought that there were math errors that happen in java when a number is divided by 0
-Why in this case do the numbers divided by 0 become Infinity
 */
 
 public class Rational {
@@ -62,7 +57,38 @@ public class Rational {
     }
 
     public int gcd() {
-        
+        int gcd = 1;
+        while (gcd < this.numerator || gcd < this.denominator) {
+            if (this.numerator % gcd == 0 && this.denominator % gcd == 0) {
+                break;
+            }
+            gcd++;
+        }
+        return gcd;
+    }
+
+    public void add(Rational num) {
+        this.numerator = this.numerator * num.denominator + this.denominator * num.numerator;
+        this.denominator = this.denominator * num.denominator;
+    }
+
+    public void subtract(Rational num) {
+        this.numerator = this.numerator * num.denominator - this.denominator * num.numerator;
+        this.denominator = this.denominator * num.denominator;
+    }
+
+    public void reduce() {
+        int gcd = this.gcd();
+        this.numerator /= gcd;
+        this.denominator /= gcd;
+    }
+
+    public int compareTo(Rational num) {
+        if (this.floatValue() > num.floatValue()) {
+            return 1;
+        } else if (this.floatValue() < num.floatValue()) {
+            return -1;
+        }
         return 0;
     }
 
