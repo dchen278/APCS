@@ -5,6 +5,7 @@ HW42 -- Be Rational
 12/2/21
 time elapsed: 0.1 hours
 DISCO:
+In order for gcd to work, we need to start checking for gcd at the minimum value between the numerator, because a smaller number % a bigger number will return the smaller number
 QCC:
 */
 
@@ -13,7 +14,10 @@ public class Rational {
     private int numerator;
 
     public static void main(String[] args) {
-
+        Rational r1 = new Rational(26, 54);
+        Rational r2 = new Rational(2, 3);
+        //gcd
+        r1.gcd(); 
     }
 
     public Rational() {
@@ -57,13 +61,14 @@ public class Rational {
     }
 
     public int gcd() {
-        int gcd = 1;
+        int gcd = Math.min(this.numerator, this.denominator);
         while (gcd < this.numerator || gcd < this.denominator) {
             if (this.numerator % gcd == 0 && this.denominator % gcd == 0) {
                 break;
             }
-            gcd++;
+            gcd--;
         }
+        System.out.println(gcd);
         return gcd;
     }
 
