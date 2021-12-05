@@ -7,6 +7,7 @@ time elapsed: 0.1 hours
 DISCO:
 In order for gcd to work, we need to start checking for gcd at the minimum value between the numerator, because a smaller number % a bigger number will return the smaller number
 QCC:
+N/A
 */
 
 public class Rational {
@@ -14,10 +15,22 @@ public class Rational {
     private int numerator;
 
     public static void main(String[] args) {
-        Rational r1 = new Rational(26, 54);
-        Rational r2 = new Rational(2, 3);
-        //gcd
-        r1.gcd(); 
+        Rational a = new Rational(6, 8);
+        System.out.println(a.gcd());
+
+        Rational r = new Rational(2, 3);
+        Rational s = new Rational(1, 2);
+        r.add(s);
+        System.out.println(r);
+
+        Rational x = new Rational(4, 3);
+        Rational y = new Rational(1, 5);
+        x.subtract(y);
+        System.out.println(x);
+
+        Rational t = new Rational(4,18);
+        t.reduce();
+        System.out.println(t);
     }
 
     public Rational() {
