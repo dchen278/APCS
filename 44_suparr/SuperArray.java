@@ -68,10 +68,52 @@ public class SuperArray {
         return oldVal;
     }
 
-    public void addAtIndex(int data, int index) {
-
+    public void add(int num) {
+        int[] temp = new int[_data.length + 1];
+        for (int i = 0; i < _data.length; i++) {
+            temp[i] = _data[i];
+        }
+        temp[temp.length - 1] = num;
+        this._data = temp;
+        this._size++;
     }
 
+    public void add(int index, int num) {
+        int[] temp = new int[_data.length + 1];
+        for (int i = 0; i < index; i++) {
+            temp[i] = _data[i];
+        }
+        temp[index] = num;
+        for (int i = index; i < _data.length; i++) {
+            temp[i + 1] = _data[i];
+        }
+        this._data = temp;
+        this._size++;
+    }
+
+    public void remove() {
+        int[] temp = new int[_data.length - 1];
+        for (int i = 0; i < _data.length - 1; i++) {
+            temp[i] = _data[i];
+        }
+        this._data = temp;
+        this._size--;
+    }
+
+    public void remove(int index) {
+        int[] temp = new int[_data.length - 1];
+        for (int i = 0; i < index; i++) {
+            if (i == index) {
+                i = this._size - 1;
+            }
+            temp[i] = _data[i];
+        }
+        for (int i = index; i < _data.length - 1; i++) {
+            temp[i] = _data[i + 1];
+        }
+        this._data = temp;
+        this._size--;
+    }
 
     // main method for testing
     public static void main(String[] args) {
@@ -88,6 +130,22 @@ public class SuperArray {
             System.out.println("Printing expanded SuperArray curtis...");
             System.out.println(curtis);
         }
+
+        SuperArray ra = new SuperArray();
+        System.out.println("Initial ra: " + ra);
+        ra.add(5);
+        System.out.println("Ra after adding 5: ");
+        System.out.println(ra);
+        ra.add(2, 7);
+        System.out.println("AddAtIndex ra: ");
+        System.out.println(ra);
+        System.out.println("Removing value at index 2...");
+        ra.remove(2);
+        System.out.println(ra);
+        System.out.println("Removing, no parameters");
+        ra.remove();
+        System.out.println(ra);
+
     }// end main()
 
 }
