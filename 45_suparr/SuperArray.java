@@ -1,19 +1,23 @@
 /*
 Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
 APCS pd7
-HW43 -- Array of Grade 316
-12/7/21
-time elapsed: 0.8 hours
+HW45: Array of Titanium
+12/8/21
+time elapsed: 0.1 hours
 DISCO:
-our program requires a ton of memory because we have to create new temporary arrays and loop through them so the visualizer isn't helpful because it exceeds the time limit
+ - Interfaces act like a blueprint for classes. They are used to define the behavior of a class.
+ - Interfaces makes sure that each class that implements it has the required methods.
 QCC:
-is there a simpler way to code toString() so that we don't have to loop through the array and exceed the visualizer time limit
+ - n/a
 */
 
 /***************************
- * class SuperArray
+ * class SuperArray version 2.0
  * Wrapper class for array. Facilitates resizing,
  * getting and setting element values.
+ * expansion
+ * get, add, remove, set elements in array
+ * making SuperArray compliant to interface ListInt
  ***************************/
 
 public class SuperArray implements ListInt {
