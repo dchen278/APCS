@@ -25,19 +25,21 @@ public class SuperArray {
     public SuperArray() {
         /* YOUR IMPLEMENTATION HERE */
         this._data = new int[10];
-        this._size = this._data.length;
+        this._size = 0;
     }
 
     // output SuperArray in [a,b,c] format
-    public String toString() {
-        String result = "[";
-        for (int i = 0; i < _data.length; i++) {
-            result += _data[i];
-            if (i != _data.length - 1) {
-                result += ", ";
-            }
-        }
-        return result + "]";
+    public String toString()
+    {
+      String foo = "[";
+      for( int i = 0; i < this._size; i++ ) {
+        foo += this._data[i] + ",";
+      }
+      if ( foo.length() > 1 )
+        //shave off trailing comma
+        foo = foo.substring( 0, foo.length()-1 );
+      foo += "]";
+      return foo;
     }
 
     // double capacity of SuperArray
@@ -48,7 +50,7 @@ public class SuperArray {
             temp[i] = _data[i];
         }
         this._data = temp;
-        this._size *= 2;
+        // this._size *= 2;
     }
 
     // accessor -- return value at specified index
@@ -67,25 +69,23 @@ public class SuperArray {
     }
 
     public void add(int num) {
-        int[] temp = new int[_data.length + 1];
-        for (int i = 0; i < _data.length; i++) {
-            temp[i] = _data[i];
+        /* YOUR IMPLEMENTATION HERE */
+        if (this._size == this._data.length) {
+            expand();
         }
-        temp[temp.length - 1] = num;
-        this._data = temp;
+        this._data[this._size] = num;
         this._size++;
     }
 
     public void add(int index, int num) {
-        int[] temp = new int[_data.length + 1];
-        for (int i = 0; i < index; i++) {
-            temp[i] = _data[i];
+        /* YOUR IMPLEMENTATION HERE */
+        if (this._size == this._data.length) {
+            expand();
         }
-        temp[index] = num;
-        for (int i = index; i < _data.length; i++) {
-            temp[i + 1] = _data[i];
+        for (int i = this._size; i > index; i--) {
+            this._data[i] = this._data[i - 1];
         }
-        this._data = temp;
+        this._data[index] = num;
         this._size++;
     }
 
@@ -99,51 +99,44 @@ public class SuperArray {
     }
 
     public void remove(int index) {
-        int[] temp = new int[_data.length - 1];
-        for (int i = 0; i < index; i++) {
-            if (i == index) {
-                i = this._size - 1;
-            }
-            temp[i] = _data[i];
+        for (int i = index; i < _size; i++) {
+            this._data[i] = this._data[i + 1];
         }
-        for (int i = index; i < _data.length - 1; i++) {
-            temp[i] = _data[i + 1];
-        }
-        this._data = temp;
         this._size--;
     }
 
     // main method for testing
     public static void main(String[] args) {
-        SuperArray curtis = new SuperArray();
-        System.out.println("Printing empty SuperArray curtis...");
-        System.out.println(curtis);
-        for (int i = 0; i < curtis._data.length; i++) {
-            curtis.set(i, i * 2);
-        }
-        System.out.println("Printing populated SuperArray curtis...");
-        System.out.println(curtis);
-        for (int i = 0; i < 3; i++) {
-            curtis.expand();
-            System.out.println("Printing expanded SuperArray curtis...");
-            System.out.println(curtis);
-        }
-
-        SuperArray ra = new SuperArray();
-        System.out.println("Initial ra: " + ra);
-        ra.add(5);
-        System.out.println("Ra after adding 5: ");
-        System.out.println(ra);
-        ra.add(2, 7);
-        System.out.println("AddAtIndex ra: ");
-        System.out.println(ra);
-        System.out.println("Removing value at index 2...");
-        ra.remove(2);
-        System.out.println(ra);
-        System.out.println("Removing, no parameters");
-        ra.remove();
-        System.out.println(ra);
-
+        SuperArray mayfield = new SuperArray();
+        System.out.println("Printing empty SuperArray mayfield...");
+        System.out.println(mayfield);
+  
+        mayfield.add(5);
+        mayfield.add(4);
+        mayfield.add(3);
+        mayfield.add(2);
+        mayfield.add(1);
+  
+        System.out.println("Printing populated SuperArray mayfield...");
+        System.out.println(mayfield);
+  
+        mayfield.remove(3);
+        System.out.println("Printing SuperArray mayfield post-remove...");
+        System.out.println(mayfield);
+        mayfield.remove(3);
+        System.out.println("Printing SuperArray mayfield post-remove...");
+        System.out.println(mayfield);
+  
+        mayfield.add(3,99);
+        System.out.println("Printing SuperArray mayfield post-insert...");
+        System.out.println(mayfield);
+        mayfield.add(2,88);
+        System.out.println("Printing SuperArray mayfield post-insert...");
+        System.out.println(mayfield);
+        mayfield.add(1,77);
+        System.out.println("Printing SuperArray mayfield post-insert...");
+        System.out.println(mayfield);
+  
     }// end main()
 
 }
