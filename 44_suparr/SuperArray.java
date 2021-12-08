@@ -1,15 +1,13 @@
 /*
 Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
 APCS pd7
-HW43 -- Array of Steel
-12/6/21
-time elapsed: 0.3 hours
+HW43 -- Array of Grade 316
+12/7/21
+time elapsed: 0.8 hours
 DISCO:
-*We can change the size of our arrays by creating a completely new one.
-Ex: Assuming _data orginally has 10 indices, _data = new int[20];
-Now _data should have 20 indices.
-*
+our program requires a ton of memory because we have to create new temporary arrays and loop through them so the visualizer isn't helpful because it exceeds the time limit
 QCC:
+is there a simpler way to code toString() so that we don't have to loop through the array and exceed the visualizer time limit
 */
 
 /***************************
