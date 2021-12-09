@@ -1,6 +1,6 @@
 public interface ListInt {
-    public void add(int num);
-    public void add(int num, int index);
-    public int size();
-    public void remove(int index);
+    void add(int num);
+    void add(int num, int index);
+    int size();
+    void remove(int index);
 }

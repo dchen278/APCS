@@ -137,9 +137,7 @@ public class SuperArray implements ListInt {
         mayfield.add(2, 88);
         System.out.println("Printing SuperArray mayfield post-insert...");
         System.out.println(mayfield);
-        mayfield.add(1, 77);
-        System.out.println("Printing SuperArray mayfield post-insert...");
-        System.out.println(mayfield);
+
 
     }// end main()
 
