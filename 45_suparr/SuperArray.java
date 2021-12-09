@@ -76,24 +76,21 @@ public class SuperArray implements ListInt {
     }
 
     public void add(int num) {
-        /* YOUR IMPLEMENTATION HERE */
-        if (this._size == this._data.length) {
-            expand();
-        }
-        this._data[this._size] = num;
         this._size++;
+        int[] temp = new int[this._size + 1];
+        for (int i = 0; i < this._size; i++) {
+            temp[i] = this._data[i];
+        }
+        temp[this._size] = num;
+        this._data = temp;
     }
 
     public void add(int index, int num) {
-        /* YOUR IMPLEMENTATION HERE */
-        if (this._size == this._data.length) {
-            expand();
+        _size++;
+        for (int i = _size; i > index; i--) {
+            _data[i] = _data[i - 1];
         }
-        for (int i = this._size; i > index; i--) {
-            this._data[i] = this._data[i - 1];
-        }
-        this._data[index] = num;
-        this._size++;
+        _data[index] = num;
     }
 
     public void remove() {
