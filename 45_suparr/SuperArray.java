@@ -1,3 +1,5 @@
+import java.util.List;
+
 /*
 Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
 APCS pd7
@@ -111,7 +113,7 @@ public class SuperArray implements ListInt {
 
     // main method for testing
     public static void main(String[] args) {
-        SuperArray mayfield = new SuperArray();
+        ListInt mayfield = new SuperArray();
         System.out.println("Printing empty SuperArray mayfield...");
         System.out.println(mayfield);
 
