@@ -47,6 +47,7 @@ public class GuessNumber {
         int guess = sc.nextInt();
         if (guess == _target) {
             System.out.println("Correct! It took " + _guessCtr + " guesses.");
+            return;
         } else if (guess < _target) {
             _lo = guess;
             System.out.println("Too low, try again...");
