@@ -25,31 +25,39 @@ public class BinSearch {
         int tPos = -1; // init return var to flag value -1
 
         int m = (lo + hi) / 2; // init mid pos var
+        if (lo <= hi) {
+            if (target.compareTo(a[m]) == 0) {
+                tPos = m;
+                return tPos;
+            } else if (target.compareTo(a[m]) < 0) {
+                tPos = binSearchRec(a, target, lo, m - 1);
+            } else {
+                tPos = binSearchRec(a, target, m + 1, hi);
+            }
+        }
 
         return tPos;
     }// end binSearchRec
 
-  public static int binSearchIter( Comparable[] a,
-                                   Comparable target,
-                                   int lo, int hi )
-  {
+    public static int binSearchIter(Comparable[] a,
+            Comparable target,
+            int lo, int hi) {
+        int tPos = -1; // init return var to flag value -1
+        int m = (lo + hi) / 2; // init mid pos var
 
-    int tPos = -1; //init return var to flag value -1
-    int m = (lo + hi) / 2; //init mid pos var
-
-    while( /* ? */ ) { // run until lo & hi cross
-
-      //update mid pos var
-
-      // target found
-
-      // value at mid index higher than target
-
-      // value at mid index lower than target
-
-    }
-    return tPos;
-  }// end binSearchIter
+        while (lo <= hi) {
+            m = (lo + hi) / 2;
+            if (a[m].compareTo(target) == 0) {
+                tPos = m;
+                break;
+            } else if (a[m].compareTo(target) > 0) {
+                hi = m - 1;
+            } else {
+                lo = m + 1;
+            }
+        }
+        return tPos;
+    }// end binSearchIter
 
     // tell whether an array is sorted in ascending order
     private static boolean isSorted(Comparable[] arr) {
