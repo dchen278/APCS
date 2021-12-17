@@ -1,6 +1,14 @@
-/**
- * class LinSearch
- **/
+/*
+Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
+APCS pd8
+HW48: Halving the Halves
+2021-12-16
+time spent: .3 hrs
+DISCO:
+n/a
+QCC:
+n/a
+ */
 
 public class LinSearch {
 
