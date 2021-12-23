@@ -1,16 +1,15 @@
-
 /*
 Team Incredibly Cohesive (David Chen, Jaylen Zeng, Orion Roven)
 APCS pd7
-HW42 -- Be More Rational
-12/2/21
-time elapsed: 0.6 hours
+HW49 -- Rational Standards Compliance
+12/22/21
+time elapsed: 0.5 hours (approximation if including class time)
 DISCO:
-In order for gcd to work we need to start checking for gcd at the minimum value between the numerator and the demonitator
-smaller number % a bigger number will return the smaller number
-because our compareTo() method uses the .floatValue() method to check if the rationals are equal, a non-reduced rational is equal to a reduced rational
+* We can use the command (Object) instanceof (Class) to check if a certain object is a member of a certain class. This statement will return a boolean.
+* We can also typecast objects to turn them into an object of a specific class. For example: (Rational) obj will turn Object obj into a member of class Rational.
+* (Not implemented) We can use a method called throw new ClassCastException to return a specific error message when the user or someone tries comparing two completely different classes.
 QCC:
-Is there a way to use .reduce() in compareTo() that will yield the same results as using .floatValue()?
+* What are the most significant differences between compareTo and equals?
 */
 
 public class Rational implements Comparable {
