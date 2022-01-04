@@ -77,7 +77,10 @@ public class BubbleSort {
     // Returns sorted copy of input ArrayList.
     public static ArrayList<Comparable> bubbleSort(ArrayList<Comparable> input) {
         /* YOUR IMPLEMENTATION HERE */
-        ArrayList<Comparable> retAL = new ArrayList<Comparable>(input);
+        ArrayList<Comparable> retAL = new ArrayList<Comparable>();
+        for (int i = 0; i < input.size(); i++) {
+            retAL.add(input.get(i));
+        }
         bubbleSortV(retAL);
         return retAL;
     }
