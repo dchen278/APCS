@@ -1,0 +1,1 @@
+Make an array for each number and print a star for each element in that array
