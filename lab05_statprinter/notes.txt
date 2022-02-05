@@ -1,1 +1,24 @@
-Make an array for each number and print a star for each element in that array
+Team Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
+APCS pd8
+L05 -- pulling it together
+2022-02-03r
+time spent: 0.5 hrs
+
+
+DISCO
+------------------------------------------------
+* The Histogram takes the value of the longestBar, divides it by the greatest value in _frequency, and multiplies it by the value of _frequency at index i.
+================================================
+
+
+QCC
+------------------------------------------------
+* Is printHistogram's time complexity O(n) or O(n^2)? The second for loop is not dependent on the size of the data set, but rather the values of the data set.
+* What other methods can we add to display more features of the data set?
+================================================
+
+
+MISC
+------------------------------------------------
+* N/A.
+================================================

@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
+// APCS pd8
 // L05 -- pulling it together
 // 2022-02-03r
-// time spent:  hrs
+// time spent: 0.5 hrs
 
 /***
  * class StatPrinterApp
