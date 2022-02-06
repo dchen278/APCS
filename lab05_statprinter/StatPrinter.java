@@ -73,8 +73,9 @@ public class StatPrinter {
   public Integer max(ArrayList<Integer> data) {
     int max = data.get(0);
     for (int i = 1; i < data.size(); i++) {
-      if (max < data.get(i)) {
-        max = data.get(i);
+      int curr = data.get(i);
+      if (max < curr) {
+        max = curr;
       }
     }
     return max;
