@@ -1,6 +1,6 @@
 
 /***
- * Kevin Li, David Chen
+ * Donkey Kong: David Chen, Kevin Li
  * class MergeSort
  * Implements mergesort on array of ints.
  * 
