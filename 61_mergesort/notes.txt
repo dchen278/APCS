@@ -1,20 +1,20 @@
-Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
-APCS pd8
-HW60 -- simple unit instructions -> powerful emergent behavior
-2022-02-07m
-time spent: 0.4 hrs
+David Chen, Kevin Li
+APCS pd08
+HW61 -- Instructions so Simple...
+2022-02-07
+time spent: 0.5 hrs
 
 DISCO:
-- Outsourcing work is good. Give work to other people to do it, who then also give the work to others. Should eventually come back to you.  
-- Split the array until each subarray has 1 element only
-- Merge with other subarrays after the array is split properly. Until one array is left. Same size as the original.
-- Don't bottleneck. Do work when subarrays are smaller.
+- An array has to be sorted if there is only one element in the array!
+- Outsourcing work is good. Give work to other people to do it, who then also give the work to others. Should eventually come back to you.
+- Sort is a job for recursion and is much easier than trying to do it iteratively
 
 QCC:
-- Algo appears to be a job for recursion.
-- Recursive method would involve two temp arrays
+- How do you diagram sort()? merge only takes 2 inputs, but does each input have multiple return values?
 
 THINKER FIRMWARE:
-1) Give: When > 1 card. Split deck in half and give to 2 other thinkeren. 
-2) Take: Receive cards if hands are empty
-3) Give (season 2): When == 1 card. Return card to whence it came. Ordered this time(?)
+- When a thinker has >1 card, split the deck in half and give one each to two other thinkeren. Signal that your hands are empty.
+- If a thinker's hands are empty and has not gotten a deck yet, receive a split deck from another thinker.
+- If a thinker has 1 card, it is declared sorted. Return the card to the thinker who originally gave it to you.
+- When you receive 2 decks of cards, place them both face up. Compare the face up cards and place the lowest card in a new pile
+- When you have merged the 2 decks into 1, return it to the thinker who originally gave it to you 
