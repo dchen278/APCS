@@ -16,6 +16,15 @@ public class Review {
  
   
   private static final String SPACE = " ";
+
+  public static void main(String[] args) {
+    // System.out.println(sentimentVal(1));
+    System.out.println(sentimentVal("Abandoned"));
+    System.out.println(sentimentVal("editorial"));
+    System.out.println(sentimentVal("sad"));
+
+    
+  }
   
   static{
     try {

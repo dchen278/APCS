@@ -1,0 +1,8 @@
+1a. public static double sentimentVal( String word )
+1b. Yes it does require a parameter of type String. If you pass
+    an argument of different type, it will result in a compile-time 
+    error
+1c. Yes, the method returns a double. 
+
+2. 
+
