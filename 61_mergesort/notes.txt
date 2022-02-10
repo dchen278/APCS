@@ -1,0 +1,20 @@
+Donkey Kong: David Chen, Kevin Li
+APCS pd08
+HW61 -- Instructions so Simple...
+2022-02-07
+time spent: 0.5 hrs
+
+DISCO:
+- An array has to be sorted if there is only one element in the array!
+- Outsourcing work is good. Give work to other people to do it, who then also give the work to others. Should eventually come back to you.
+- Sort is a job for recursion and is much easier than trying to do it iteratively
+
+QCC:
+- How do you diagram sort()? merge only takes 2 inputs, but does each input have multiple return values?
+
+THINKER FIRMWARE:
+- When a thinker has >1 card, split the deck in half and give one each to two other thinkeren. Signal that your hands are empty.
+- If a thinker's hands are empty and has not gotten a deck yet, receive a split deck from another thinker.
+- If a thinker has 1 card, it is declared sorted. Return the card to the thinker who originally gave it to you.
+- When you receive 2 decks of cards, place them both face up. Compare the face up cards and place the lowest card in a new pile
+- When you have merged the 2 decks into 1, return it to the thinker who originally gave it to you 
