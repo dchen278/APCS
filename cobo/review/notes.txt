@@ -1,3 +1,4 @@
+================Activity 1================
 1a. public static double sentimentVal( String word )
 1b. Yes it does require a parameter of type String. If you pass
     an argument of different type, it will result in a compile-time 
@@ -5,4 +6,14 @@
 1c. Yes, the method returns a double. 
 
 2. 
+    Abandoned: -0.09
+    Editorial: -0.68
+    sad: -1.37
 
+3a. Would compile because the parameter type is correct and the return types match
+3b. Would not compile because the parameter type is not correct and varType is different from return type
+3c. Would not compile because the method only takes 1 parameter, but two is provided
+
+================End Activity 1============
+
+================Activity 2================
