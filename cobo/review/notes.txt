@@ -6,9 +6,10 @@
 1c. Yes, the method returns a double. 
 
 2. 
-    Abandoned: -0.09
-    Editorial: -0.68
-    sad: -1.37
+    abandoned : -0.09
+    ability : -0.03
+    account : 0.64
+    Pog : 0.0
 
 3a. Would compile because the parameter type is correct and the return types match
 3b. Would not compile because the parameter type is not correct and varType is different from return type
@@ -17,3 +18,48 @@
 ================End Activity 1============
 
 ================Activity 2================
+4) totalSentiment() iterates through a string until there are no more spaces left.
+   Each iteration, the sentiment of the first word is added to total sentiment and then that word is removed from the string.
+
+5a) The ratings make sense. Reviews with more possitive words have higher ratings.
+5b) Maybe add points for punctuation or captials.
+
+6a) The student wrote his code so that any sentiment < 15 will return a 4 as that is the first boolean statement checked.
+    He also made it so that anything > 15 returns a 0, which I assume isn't supposed to happen.
+6b) He can fix this by fliping the conditionals around. Starting from if (totalSentiment < 0) down to if (totalSentiment < 15)
+================End Activity 2============
+
+
+================Activity 3================
+3. The indexOf method finds the first occurence of a given string.
+    The substring method returns a part of the string when given a starting index and an optional end index
+    It is necessary to add 1 to the position because the substring begins at the given starting index
+
+5. Static methods belong to a class as a whole and not just one instance. 
+   They can be called without having a separate instance. 
+   Non-static methods belong to instances and must be called from an instance of a class.
+
+6. We can use the randomNegativeAdj or randomPositiveAdj methods to create an intentionally biased review.
+================End Activity 3============
+
+================Activity 4================
+1. Review bombing
+2. Boosting reputation
+3. Add more adjectives. Use biased adjectives.
+    String review;
+    while ("*" in review) {
+      String left = review.substring(0, review.indexOf("*"));
+      String right = review.substring(review.indexOf(" ", review.indexOf("*")));
+      review = left + randomNegativeAdj + " and " + randomNegativeAdj + right;
+    }    
+
+5. OneWord has the value of everything in one word but the first character.
+6. * isn't part of the word and therefore will interfere with getting the word's sentiment.
+7. Add more adjectives.
+================End Activity 4============
+
+================Activity 5================
+
+================End Activity 5============
+
+

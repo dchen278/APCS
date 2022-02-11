@@ -17,22 +17,25 @@ public class Review {
   private static final String SPACE = " ";
 
   public static void main(String[] args) {
-    // System.out.println(sentimentVal(1));
-    System.out.println(sentimentVal("Abandoned"));
-    System.out.println(sentimentVal("editorial"));
-    System.out.println(sentimentVal("sad"));
+    // System.out.println(sentimentVal(0));
+    System.out.println(sentimentVal("abandoned"));
+    System.out.println(sentimentVal("ability"));
+    System.out.println(sentimentVal("account"));
+    System.out.println(sentimentVal("Pog"));
+    System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
+    System.out.println(fakeReview("SimpleReview.txt"));
 
   }
 
-  public static double totalSentiment(String fileName) {
-    // use textToString to get the text from the file
-    String text = textToString(fileName);
-    String[] words = text.split(" ");
-    double totalSentiment = 0;
-    for (String word : words) {
-      totalSentiment += sentimentVal(word);
-    }
-    return totalSentiment;
+  public static String fakeReview(String fileName) {
+    String review = textToString(fileName);
+    while (review.indexOf("*") >= 0) {
+      String left = review.substring(0, review.indexOf("*"));
+      String right = review.substring(review.indexOf(" ", review.indexOf("*")));
+      review = left + randomNegativeAdj() + " and " + randomNegativeAdj() + right;
+    }    
+    return review;
   }
 
   static {
@@ -71,6 +74,34 @@ public class Review {
     } catch (Exception e) {
       System.out.println("Error reading or parsing negativeAdjectives.txt");
     }
+  }
+
+  // Star rating
+  public static int starRating(String fileName) {
+    double sentiment = totalSentiment(fileName);
+    if (sentiment < 5) {
+      return 1;
+    } else if (sentiment < 15) {
+      return 2;
+    } else if (sentiment < 25) {
+      return 3;
+    } else if (sentiment < 35) {
+      return 4;
+    }
+    return 5;
+  }
+
+  // Total sentiment
+  public static double totalSentiment(String fileName) {
+    String review = textToString("SimpleReview.txt");
+    double sentiment = 0;
+    while (review.indexOf(" ") >= 0) {
+      String word = review.substring(0, review.indexOf(" "));
+      word = removePunctuation(word);
+      sentiment += sentimentVal(word);
+      review = review.substring(review.indexOf(" ") + 1);
+    }
+    return sentiment + sentimentVal(review);
   }
 
   /**
