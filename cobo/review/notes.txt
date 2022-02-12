@@ -1,3 +1,9 @@
+Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
+APCS pd8
+L06: Read/Review/Expand
+2022-02-11f
+time spent: 1.0 hrs
+
 ================Activity 1================
 1a. public static double sentimentVal( String word )
 1b. Yes it does require a parameter of type String. If you pass
@@ -59,6 +65,32 @@
 ================End Activity 4============
 
 ================Activity 5================
+1. We chose to implement a Caesar Shift because it fills all the requirements and is interesting.
+
+2. We first went over how a caesar shift works and then wrote down a few examples. Then, we implemented the algorithm for an all lowercase string. 
+   After that, we accounted for punctuation and numbers. Finally, we accounted for capital letters.
+
+3. public static String shift(String s, int key) 
+   We chose a String as a param because caesar shifts encrypt sentences. We also have an int that dictates how much each letter is shifted.
+   The method is static because it doesn't require any variable or method that would require an instance to be created.
+
+4. char[] charArray = new char[s.length()]; The length() method returns the length of the String.
+   charArray[i] = s.charAt(i); The charAt() method returns the substring at an index to a char and returns it.
+
+5. if (c >= 'a' && c <= 'z') EQUIVALENT CODE : if (c > '`' && c < '{')
+
+6.  for (int i = 0; i < s.length(); i ++) {
+            charArray[i] = s.charAt(i);
+        }
+
+    The loop iterates until it has reached the end of the string. During each iteration it places the character at i in an equivalent index of an array.
+
+    EQUIVALENT CODE:
+    int i = 0;
+    while (i < s.length()) {
+        charArray[i] = s.charAt(i);
+        i++;
+    }
 
 ================End Activity 5============
 
