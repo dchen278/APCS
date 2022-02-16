@@ -36,18 +36,17 @@ public class QueenBoard
   {
     for (int[] arr : _board) {
       for (int pos : arr) {
-        if (pos != 0) {
+        if (pos == 0) {
           return false;
         }
       }
     }
 
-    for (int row = 0; row < _board.length; row++) {
-      for (int col = 0; col < _board.length; col++) {
-        solveH(col, row);
-      }
+    if (solveH(0) == false) {
+      return false;
     }
 
+    printSolution();
     return true;
   }
 
@@ -55,21 +54,15 @@ public class QueenBoard
   /**
    *Helper method for solve. 
    */
-  private boolean solveH( int col, int row ) 
-  {
-
-    if (col == 0 && row == 0) {
-      addQueen(row, col); 
+  private boolean solveH( int col ) 
+  { 
+    if (col >= _board.length) {
       return true;
     }
 
-    if (solveH(col + 1, row + 2)) {
-      return true;
-    } else {
-      removeQueen(row, col);
-    }
+    for (int i = 0; i < _board.length; i++) {
 
-    return true;
+    }
   }
 
 
