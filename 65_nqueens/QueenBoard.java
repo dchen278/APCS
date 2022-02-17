@@ -1,8 +1,8 @@
-// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
 // APCS pd8
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
 // HW65: How Many Queens Can a Thinker Place, If a Thinker Can Place Queens...
 // 2022-02-16w
-// time spent: 0.4 hrs
+// time spent:  hrs
 
 
 /***
@@ -34,20 +34,9 @@ public class QueenBoard
    */
   public boolean solve()
   {
-    for (int[] arr : _board) {
-      for (int pos : arr) {
-        if (pos == 0) {
-          return false;
-        }
-      }
-    }
-
-    if (solveH(0) == false) {
-      return false;
-    }
-
+    boolean solution = solveH(0);
     printSolution();
-    return true;
+    return solution;
   }
 
 
@@ -56,13 +45,23 @@ public class QueenBoard
    */
   private boolean solveH( int col ) 
   { 
+    // return true if all queens are placed
     if (col >= _board.length) {
       return true;
     }
 
-    for (int i = 0; i < _board.length; i++) {
-
+    // check each space at column
+    for (int row = 0; row < _board.length; row ++) {
+      // if queen can be added at space, check rest of rows
+      if (addQueen(row, col)) {
+        if (solveH(col + 1)) {
+          return true;
+        }
+      }
+      // no queen added, time to backtrack
+      removeQueen(row, col);
     }
+    return false;
   }
 
 
@@ -76,9 +75,9 @@ public class QueenBoard
     for ( int[] arr: _board) {
       for (int pos: arr) {
         if (pos > 0) {
-          System.out.print("Q");
+          System.out.print("Q ");
         } else {
-        System.out.print("_");
+        System.out.print("_ ");
         }
       }
       System.out.println();
@@ -171,32 +170,35 @@ public class QueenBoard
        0	0	0	0	0	
        0	0	0	0	0	
     */
-
+    
     b.addQueen(3,0);
     b.addQueen(0,1);
     System.out.println(b);
     /** should be...
-       0	1	-1	-2	-1	
-       0	0	-2	0	0	
-       0	-1	0	-1	0	
-       1	-1	-1	-1	-2	
-       0	-1	0	0	0	
-    */
-
+     0	1	-1	-2	-1	
+     0	0	-2	0	0	
+     0	-1	0	-1	0	
+     1	-1	-1	-1	-2	
+     0	-1	0	0	0	
+     */
+    
     b.removeQueen(3,0);
     System.out.println(b);
     /** should be...
-       0	1	-1	-1	-1	
-       0	0	-1	0	0	
-       0	0	0	-1	0	
-       0	0	0	0	-1	
-       0	0	0	0	0	 
-    */
-    QueenBoard c = new QueenBoard(5);
-    
+     0	1	-1	-1	-1	
+     0	0	-1	0	0	
+     0	0	0	-1	0	
+     0	0	0	0	-1	
+     0	0	0	0	0	 
+     */
+    QueenBoard c = new QueenBoard(8);
+    System.out.println("Can be solved: " + c.solve());    
 
-    c.solve();
+    QueenBoard d = new QueenBoard(25);
+    System.out.println("Can be solved: " + d.solve());    
 
+    QueenBoard e = new QueenBoard(50);
+    System.out.println("Can be solved: " + e.solve());    
   }
-
+  
 }//end class
