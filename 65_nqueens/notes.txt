@@ -1,0 +1,14 @@
+APCS pd8
+Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
+HW65: How Many Queens Can a Thinker Place, If a Thinker Can Place Queens...
+2022-02-16w
+time spent: 1 hr 
+
+DISCO:
+- Algo utilizes recursive backtracking.
+- Board sizes of 2 x 2 and 3 x 3 cannot be solved in such a way that n queens may be placed without attacking each other.
+- For board sizes of 1 x 1 and anything 4 x 4 or higher, there is a solution(s) to placing n queens so that they could not attack each other.
+
+QCC:
+- Would a board size of 0 x 0 be considered "solveable"?
+- How many solutions are possible to a given n x n board? Is there a pattern?
