@@ -17,6 +17,7 @@ public class QueenBoard
 {
 
   private int[][] _board;
+  private int calls = 0;
 
   public QueenBoard( int size ) 
   {
@@ -45,6 +46,7 @@ public class QueenBoard
    */
   private boolean solveH( int col ) 
   { 
+    calls++;
     // return true if all queens are placed
     if (col >= _board.length) {
       return true;
@@ -192,13 +194,13 @@ public class QueenBoard
      0	0	0	0	0	 
      */
     QueenBoard c = new QueenBoard(8);
-    System.out.println("Can be solved: " + c.solve());    
+    System.out.println("Can be solved: " + c.solve() + " calls: " + c.calls);    
 
     QueenBoard d = new QueenBoard(25);
-    System.out.println("Can be solved: " + d.solve());    
+    System.out.println("Can be solved: " + d.solve() + " calls: " + d.calls);  
 
     QueenBoard e = new QueenBoard(50);
-    System.out.println("Can be solved: " + e.solve());    
+    System.out.println("Can be solved: " + e.solve() + " calls: " + e.calls);    
   }
   
 }//end class
