@@ -92,12 +92,20 @@ class TourFinder
     _sideLength = n;
 
     //init 2D array to represent square board with moat
-    _board = new int[n][n];
+    _board = new int[n + 4][n + 4];
 
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    ???
+    
+    for (int i = 0; i < n + 3; i++) {
+      for ( int j = 0; j < n + 3; j++) {
+        _board[i][j] = -1;
+      }
+    }
+    for( int i=2; i < n+2; i++ )
+      for( int j=2; j < n+2; j++ )
+        _board[i][j] = 0; //lay down 0's for actual board
     //---------------------------------------------------------
 
   }//end constructor
@@ -109,7 +117,7 @@ class TourFinder
   public String toString()
   {
     //send ANSI code "ESC[0;0H" to place cursor in upper left
-    String retStr = "#[0;0H";
+    String retStr = "[0;0H";
     //emacs shortcut: C-q, then press ESC
     //emacs shortcut: M-x quoted-insert, then press ESC
 
@@ -150,11 +158,11 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( ??? ) System.exit(0);
+    if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( ??? ) {
-      ???
+    if ( moves > _sideLength * _sideLength) {
+      _solved = true;
       System.out.println( this ); //refresh screen
       return;
     }
@@ -167,7 +175,7 @@ class TourFinder
     else {
 
       //mark current cell with current move number
-      _board[x][y] = move;
+      _board[x][y] = moves;
 
       System.out.println( this ); //refresh screen
 
