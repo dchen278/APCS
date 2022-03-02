@@ -1,8 +1,7 @@
-// APCS 
-// pd8 
-// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen) 
-// HW68: ...and T-, Tr-, Tri-, Tries Again Until It's Done / Completed Knight's Tour class
-// 2022-03-02w 
+// APCS pd8
+// Hand Sanitizers (Yat Long Chan + Diana Akhmedova + David Chen)
+// HW68 -- ...and T-, Tr-, Tri-, Tries Again Until It's Done / Completed Knight's Tour class
+// 2022-02-28m
 // time spent: 0.5 hr
 
 /***
@@ -15,24 +14,26 @@
  * $ java KnightTour
  * $ java KnightTour [N]
  *
- * ALGO
- * If all squares have been visited:
- * Solution has been found.
+ * ALGO:
+ * - If all squares have been visited:
+ *    - Solution has been found.
+ * - Else:
+ *    - Check possible movement of the knight at current position.
+ *    - If the move is valid, recursively check the next positions for a solution.
+ *    - If a move is invalid, backtrack and check the alternatives.If all alternatives are invalid, no solution exists.
  *
- * Else:
- * Check possible movement of the knight at current position.
- * If the move is valid, recursively check the next positions for a solution.
- * If a move is invalid, backtrack and check the alternatives.If all alternatives are invalid, no solution exists.
- * DISCO
- * A knight can make a total of 8 different L-shaped moves.
- * The execution time appears to increase by a factor of 40.6.
- * QCC
- * How do we calculate the number of possible solutions for any board size?
+ * DISCO:
+ * - A knight can make a total of 8 different L-shaped moves.
+ * - The execution time appears to increase by a factor of 40.6.
+ *
+ * QCC:
+ * - How do we calculate the number of possible solutions for any board size?
+ *
  * Mean execution times for boards of size n*n:
- * n=5   6.761s    across 5 executions
- * n=6   274.488s    across 1 executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   6.7608s    across 5 executions
+ * n=6   274.488s    across 1 execution
+ * n=7   11,144.193s    across 1 execution
+ * n=8   452,453.457s    across 1 execution
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -43,53 +44,55 @@ import java.io.*;
 import java.util.*;
 
 public class KnightTour {
-  public static void main( String[] args )
-  {
+  public static void main(String[] args) {
     int n = 8;
 
     try {
-      n = Integer.parseInt( args[0] );
-    } catch( Exception e ) {
-      System.out.println( "Invalid input. Using board size "
-                          + n + "..." );
+      n = Integer.parseInt(args[0]);
+    } catch (Exception e) {
+      System.out.println("Invalid input. Using board size "
+          + n + "...");
     }
 
-    TourFinder tf = new TourFinder( n );
+    TourFinder tf = new TourFinder(n);
 
-    //clear screen using ANSI control code
-    System.out.println( "#[2J" );
+    // clear screen using ANSI control code
+    System.out.println("#[2J");
 
-    //display board
-    System.out.println( tf );
+    // display board
+    System.out.println(tf);
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    //for fixed starting location, use line below:
-    //tf.findTour( 2, 2, 1);
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // for fixed starting location, use line below:
+    // tf.findTour( 2, 2, 1);
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    
-    //for random starting location, use lines below:
+    // for random starting location, use lines below:
     int startX = (int) (Math.random() * n);
     int startY = (int) (Math.random() * n);
-    while (startX == 0 || startX == 1 ) {
+    while (startX == 0 || startX == 1) {
       startX = (int) (Math.random() * n + 2);
     }
     while (startY == 0 || startY == 1) {
       startY = (int) (Math.random() * n + 2);
     }
-    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    tf.findTour(startX, startY, 1); // 1 or 0 ?
+    /*
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     */
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    PUSHING FARTHER...
-    Systematically attempt to solve from every position on the board?
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /*
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     * PUSHING FARTHER...
+     * Systematically attempt to solve from every position on the board?
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     */
     // find tours from every position on the board
 
     for (int i = 2; i < n + 2; i++) {
       for (int j = 2; j < n + 2; j++) {
-        tf.findTour( i, j, 1 );
+        tf.findTour(i, j, 1);
       }
     }
 
