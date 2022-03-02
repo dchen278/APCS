@@ -32,8 +32,8 @@
  * Mean execution times for boards of size n*n:
  * n=5   6.7608s    across 5 executions
  * n=6   274.488s    across 1 execution
- * n=7   11,144.193s    across 1 execution
- * n=8   452,453.457s    across 1 execution
+ * n=7   _s    across 1 execution
+ * n=8   _s    across 1 execution
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
