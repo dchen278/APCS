@@ -34,6 +34,7 @@
  * n=6   274.488s    across 1 execution
  * n=7   _s    across 1 execution
  * n=8   _s    across 1 execution
+ * Took 6m 53s 776ms to find knights tour for every position on a board of size 5x5
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
