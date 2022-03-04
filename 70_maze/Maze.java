@@ -1,9 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
-// HW69 -- maze solving (blind, depth-first)
-// 2022-03-03r
-// time spent:  hrs
-
+// LoGIcaLly sPeAkINg… (David Chen + Daniel Jung + Faiza Huda)
+// APCS pd8
+// HW69: Making Sense
+// 2022-03-02w
+// time spent: 1 hr
 /***
  * SKEELTON for
  * class MazeSolver
@@ -135,7 +134,7 @@ class MazeSolver {
       System.exit(0);
     }
     // other base cases
-    else if (x > w || y > h) {
+    else if (x > w || y > h || x < 0 || y < 0) {
       return;
     } else if (_maze[x][y] != '#') {
       return;
@@ -155,12 +154,20 @@ class MazeSolver {
     }
   }
 
+  public int getX() {
+    return w;
+  }
+
+  public int getY() {
+    return h;
+  }
+
   // accessor method to help with randomized drop-in location
   public boolean onPath(int x, int y) {
-      if ( x > w || y > h || _maze[x][y] != '#'){
-        return false;
-      }
-      return true;
+    if (x > w || y > h || _maze[x][y] != '#') {
+      return false;
+    }
+    return true;
   }
 
 }// end class MazeSolver
@@ -190,13 +197,22 @@ public class Maze {
 
     // drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve(4, 3);
+    //ms.solve(4, 3);
 
     // drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    
-    int randomX = (int) (Math.random() )
+    int randomX = (int) (Math.random() * ms.getX());
+    int randomY = (int) (Math.random() * ms.getY());
+
+  
+    while (!ms.onPath(randomX, randomY)) {
+      randomX = (int) (Math.random() * ms.getX());
+      randomY = (int) (Math.random() * ms.getY());
+    }
+
+    ms.solve(randomX, randomY);
     // ms.solve( startX, startY );
+
     /*
      * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
