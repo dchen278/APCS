@@ -1,8 +1,8 @@
 // LoGIcaLly sPeAkINg… (David Chen + Daniel Jung + Faiza Huda)
 // APCS pd8
 // HW69: Making Sense
-// 2022-03-02w
-// time spent: 1 hr
+// 2022-03-05f
+// time spent: 0.5 hr
 /***
  * SKEELTON for
  * class MazeSolver
