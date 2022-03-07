@@ -1,6 +1,6 @@
 public class Mysterion {
     public static void main(String[] args) {
-        System.out.println(mysterion(new int[] {7, 1, 5, 12, 3}, 0, 4, 2));
+        System.out.println(arrToString(mysterion(new int[] {7, 1, 5, 12, 3}, 0, 4, 2)));
     }
 
     public static int[] mysterion(int[] arr, int a, int b, int c) {
@@ -25,8 +25,14 @@ public class Mysterion {
 
         return arr;
     }
-
-    public static String printArr(int[] arr) {
-        
-    }
+    public static String arrToString( int[] ary ) {
+        String ans = "[";
+        for( int i = 0; i < ary.length; i++ ) {
+          ans += ary[i];
+          if( i != ary.length - 1 ) {
+            ans += ", ";
+          }
+        }
+        return ans + "]";
+      }
 }
