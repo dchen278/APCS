@@ -14,7 +14,10 @@
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ * Base case: If you are at the $ (exit), end the program.
+    Choose a cardinal direction and check to see if there are possible valid paths. Return false if there are no possible valid paths to go through 
+    (This returns back to the last valid path) and check the other directions as well. If there aren’t any valid paths for any direction, 
+    return to the previous working position. 
  *
  * DISCO
  * 
@@ -128,28 +131,26 @@ class MazeSolver {
       System.exit(0);
 
     // found exit
-    if (_maze[x][y] == '$') {
+    if (_maze[x][y] == EXIT) {
       _solved = true;
       System.out.print(this);
       System.exit(0);
     }
     // other base cases
-    else if (x > w || y > h || x < 0 || y < 0) {
-      return;
-    } else if (_maze[x][y] != '#') {
+    else if (_maze[x][y] != PATH) {
       return;
     }
     // otherwise, recursively solve maze from next pos over,
     // after marking current location
     else {
-      _maze[x][y] = '@';
+      _maze[x][y] = HERO;
       System.out.println(this); // refresh screen
       solve(x, y + 1);
       solve(x + 1, y);
       solve(x, y - 1);
       solve(x - 1, y);
 
-      _maze[x][y] = '.';
+      _maze[x][y] = VISITED_PATH;
       System.out.println(this); // refresh screen
     }
   }
@@ -164,10 +165,7 @@ class MazeSolver {
 
   // accessor method to help with randomized drop-in location
   public boolean onPath(int x, int y) {
-    if (x > w || y > h || _maze[x][y] != '#') {
-      return false;
-    }
-    return true;
+    return (_maze[x][y] == PATH);
   }
 
 }// end class MazeSolver
@@ -197,14 +195,13 @@ public class Maze {
 
     // drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    //ms.solve(4, 3);
+    // ms.solve(4, 3);
 
     // drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
     int randomX = (int) (Math.random() * ms.getX());
     int randomY = (int) (Math.random() * ms.getY());
 
-  
     while (!ms.onPath(randomX, randomY)) {
       randomX = (int) (Math.random() * ms.getX());
       randomY = (int) (Math.random() * ms.getY());
