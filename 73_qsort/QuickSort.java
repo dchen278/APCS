@@ -1,8 +1,8 @@
-//Clyde Sinclair
-//APCS pd0
-//HW72 -- QuickSort
-//2022-03-09w
-//time spent: _h
+// A Dog's Dream (David Chen + Daniel Jung + Abdullah Faraque)
+// APCS pd8
+// HW73: All About the About Face
+// 2022-03-08
+// time spent: 1.1 hrs
 
 /***
  * class QuickSort
@@ -12,11 +12,12 @@
  * QSort(arr):
  *
  * 2a. Worst pivot choice and associated run time:
- *
+ * The worst pivot choice is when the randomly chosen pivot is one of the extremes (beginning or end of array).
+ * The time complexity of this would be O(n^2).
  * 2b. Best pivot choice and associated run time:
- *
+ * The best pivot choice is when the randomly chosen pivot is the central index of the array. This have a runtime of O(nlog(n))
  * 3. Approach to handling duplicate values in array:
- *
+ * We can use the <= or >= sign in Partition.
  **/
 
 public class QuickSort
@@ -60,28 +61,29 @@ public class QuickSort
   }
   //--------------^  HELPER METHODS  ^--------------
 
-
-
-
   /**
    * void qsort(int[])
    * @param d -- array of ints to be sorted in place
    */
   public static void qsort( int[] d )
   {
-    
+    qsortHelper( d, 0, d.length - 1 );
   }
 
   //you may need a helper method...
-
-
-  
+  public static void qsortHelper( int[] d, int lo, int hi )
+  {
+    if( lo < hi ) {
+      int pvtPos = Partition.partition( d, lo, hi );
+      qsortHelper( d, lo, pvtPos - 1 );
+      qsortHelper( d, pvtPos + 1, hi );
+    }
+  }
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y) 
 
     //get-it-up-and-running, static test case:
     int [] arr1 = {7,1,5,12,3};
@@ -107,10 +109,10 @@ public class QuickSort
     qsort( arrN );
     System.out.println("arrN after sort: " );
     printArr(arrN);
+    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
 
     //get-it-up-and-running, static test case w/ dupes:
     int [] arr2 = {7,1,5,12,3,7};
@@ -137,6 +139,7 @@ public class QuickSort
     qsort( arrMatey );
     System.out.println("arrMatey after sort: " );
     printArr(arrMatey);
+    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main
