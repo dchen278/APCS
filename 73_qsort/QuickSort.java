@@ -9,13 +9,15 @@
  * Implements quicksort algo to sort an array of ints in place
  *
  * 1. Summary of QuickSort algorithm:
- * QSort(arr):
+ * QSort(arr): With an initial array, a lower bound value (lo), and a upper bound value (high), we check to see if lo<hi.
+ * If false, the program ends
+ * If true, we partition the array and recurse through the function with both the segment of the array from the returned partition index to the left and to the right.
  *
  * 2a. Worst pivot choice and associated run time:
  * The worst pivot choice is when the randomly chosen pivot is one of the extremes (beginning or end of array).
  * The time complexity of this would be O(n^2).
  * 2b. Best pivot choice and associated run time:
- * The best pivot choice is when the randomly chosen pivot is the central index of the array. This have a runtime of O(nlog(n))
+ * The best pivot choice is when the randomly chosen pivot is the central index of the array. This have a runtime of O(n*log(n))
  * 3. Approach to handling duplicate values in array:
  * We can use the <= or >= sign in Partition.
  **/
