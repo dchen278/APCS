@@ -125,53 +125,53 @@ public class Mysterion
   {
     
     //init test arrays of magic numbers
-    // int[] arr1 = {7,21,17,69,343};
-    // int[] arr3 = {1,28,33,4982,37};
-    // int[] arr4 = {5,4,17,9000,6};
-    // int[] arr5 = {3,0,16,599,1024};
-    int[] arr6 = {13, 7, 29, 26, 3, 8, 9};
-    partition(arr6, 0, 6, 3);
-    partition(arr6, 0, 4, 2);
-    partition(arr6, 0, 2, 1);
-    partition(arr6, 0, 1, 1);
+    int[] arr1 = {7,21,17,69,343};
+    int[] arr3 = {1,28,33,4982,37};
+    int[] arr4 = {5,4,17,9000,6};
+    int[] arr5 = {3,0,16,599,1024};
+    // int[] arr6 = {13, 7, 29, 26, 3, 8, 9};
+    // partition(arr6, 0, 6, 3);
+    // partition(arr6, 0, 4, 2);
+    // partition(arr6, 0, 2, 1);
+    // partition(arr6, 0, 1, 1);
 
     
     // run partition on each array,
     // holding a & b fixed, varying c...
-    // for( int testC = 0; testC < 5; testC++ ) {
-    //   System.out.println("arr1: ");
-    //   printArr(arr1);
-    //   partition(arr1,0,4,testC);
-    //   System.out.println("after partition w/ a=0,b=4,c=" 
-    //   + testC +"...");
-    //   printArr(arr1);
-    //   System.out.println("-----------------------");
+    for( int testC = 0; testC < 5; testC++ ) {
+      System.out.println("arr1: ");
+      printArr(arr1);
+      partition(arr1,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr1);
+      System.out.println("-----------------------");
       
-    //   System.out.println("arr3:");
-    //   printArr(arr3);
-    //   partition(arr3,0,4,testC);
-    //   System.out.println("after partition w/ a=0,b=4,c=" 
-    //   + testC +"...");
-    //   printArr(arr3);
-    //   System.out.println("-----------------------");
+      System.out.println("arr3:");
+      printArr(arr3);
+      partition(arr3,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr3);
+      System.out.println("-----------------------");
       
-    //   System.out.println("arr4:");
-    //   printArr(arr4);
-    //   partition(arr4,0,4,testC);
-    //   System.out.println("after partition w/ a=0,b=4,c=" 
-    //   + testC +"...");
-    //   printArr(arr4);
-    //   System.out.println("-----------------------");
+      System.out.println("arr4:");
+      printArr(arr4);
+      partition(arr4,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr4);
+      System.out.println("-----------------------");
       
-    //   System.out.println("arr5:");
-    //   printArr(arr5);
-    //   partition(arr5,0,4,testC);
-    //   System.out.println("after partition w/ a=0,b=4,c=" 
-    //   + testC +"...");
-    //   printArr(arr5);
-    //   System.out.println("-----------------------");
-    //   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    //   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    // }
+      System.out.println("arr5:");
+      printArr(arr5);
+      partition(arr5,0,4,testC);
+      System.out.println("after partition w/ a=0,b=4,c=" 
+      + testC +"...");
+      printArr(arr5);
+      System.out.println("-----------------------");
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    }
   }//end main
 }//end class Mysterion
