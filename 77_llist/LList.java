@@ -1,8 +1,9 @@
 // A Dog's Dream (David Chen + Daniel Jung + Abdullah Faraque)
 // APCS pd8
-// HW76: We Got a Little Ol' Convoy
-// 2022-03-14
-// time spent: 1.1 hrs
+// HW77: Insert|Remove
+// 2022-03-15t
+// time spent: 0.3 hrs
+
 
 /***
  * class LList
@@ -84,9 +85,31 @@ public class LList implements List // interface def must be in this dir
     }
 
     public void add (int index, String newval) {
-        for (int i = 0; i < index; i++) {
+        if (index < 0 || index >= size())
+            throw new IndexOutOfBoundsException();
 
+        LLNode tmp = _head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.getNext();
         }
+
+        tmp.setNext(new LLNode(newval, tmp.getNext()));
+        _size++;
+    }
+
+    public String remove(int index) {
+        if (index < 0 || index >= size())
+            throw new IndexOutOfBoundsException();
+
+        LLNode tmp = _head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.getNext();
+        }
+
+        String result = tmp.getCargo();
+        tmp.setNext(tmp.getNext().getNext());
+        _size--;
+        return result;
     }
 
     // main method for testing
