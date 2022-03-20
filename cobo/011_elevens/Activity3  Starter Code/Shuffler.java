@@ -1,13 +1,18 @@
 /**
  * This class provides a convenient way to test shuffling methods.
  */
+
+/*
+3) 0, 1, 1
+*/
+
 public class Shuffler {
 
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 10;
 
 
 	/**
@@ -42,6 +47,26 @@ public class Shuffler {
 		System.out.println();
 	}
 
+	public static String flip() {
+		if (Math.random() > 0.33) {
+			return "tails";
+		};
+		return "heads";
+	}
+
+	public boolean arePermutations (int[] a, int[] b) {
+		if (a.length != b.length) {
+			return false;
+		}
+		for (int i : a) {
+			for (int j : b) {
+				if (i == j) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	/**
 	 * Apply a "perfect shuffle" to the argument.
