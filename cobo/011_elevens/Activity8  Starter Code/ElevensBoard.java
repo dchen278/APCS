@@ -1,5 +1,11 @@
 import java.util.List;
 import java.util.ArrayList;
+/*
+1) All three games are similar in that they are all revolving around the idea of having the cards
+add up to a certain number.
+2) ElvensBoard inherits Board by with the keywork extends
+3) No. The methods will have to be implemented differently for each game.
+*/
 
 /**
  * The ElevensBoard class represents the board in a game of Elevens.
