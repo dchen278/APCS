@@ -4,6 +4,21 @@ import java.util.ArrayList;
 /**
  * The ElevensBoard class represents the board in a game of Elevens.
  */
+
+ /*
+1) Board, deck, and cards
+2) Shuffle deck, place cards onto board, place cards, check if legal, deal card. Rinse and repeat.
+3) Yes
+4a) newGame() and the constructor
+4b) isLegal(), anotherPlayIsPossible()
+4c) J, 6, 2, A, 4
+4d) 
+For (Integer i : cIndexes) {
+	System.out.println(cards[i])
+}
+4e) anotherPlayIsPossibl
+*/
+
 public class ElevensBoard {
 
 	/**
