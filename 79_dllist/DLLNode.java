@@ -4,12 +4,12 @@
 // 2022-03-17s
 // time spent: 0.5 hrs
 
-public class DLLNode {
-    private String _cargo;
+public class DLLNode<T> {
+    private T _cargo;
     private DLLNode _nextNode;
     private DLLNode _prevNode;
 
-    public DLLNode(DLLNode prev, String value, DLLNode next) {
+    public DLLNode(DLLNode prev, T value, DLLNode next) {
         this._cargo = value;
         this._nextNode = next;
         this._prevNode = prev;
@@ -18,7 +18,7 @@ public class DLLNode {
     public DLLNode() {}
 
     // --------------v ACCESSORS v--------------
-    public String getCargo() {
+    public T getCargo() {
         return this._cargo;
     }
 
@@ -32,8 +32,8 @@ public class DLLNode {
     // --------------^ ACCESSORS ^--------------
 
     // --------------v MUTATORS v--------------
-    public String setCargo(String newCargo) {
-        String foo = getCargo();
+    public T setCargo(T newCargo) {
+        T foo = getCargo();
         _cargo = newCargo;
         return foo;
     }

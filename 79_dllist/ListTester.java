@@ -6,16 +6,17 @@
  *  overriding List interface from standard Java library
  **/
 
-public class ListTester
+public class ListTester<T>
 {
   public static void main( String[] args )
   {
 
     //instantiate... var type List, obj type LList
-    LList wu = new LList();
+    LList<T> wu = new LList<T>();
 
     System.out.println(wu);
     wu.add("RZA");
+    wu.add(1);
 
     System.out.println(wu);
     wu.add("GZA");

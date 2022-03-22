@@ -32,7 +32,7 @@
  * Implements a linked list of LLNodes, each containing String data
  **/
 
-public class LList implements List // your List interface must be in same dir
+public abstract class LList<T> implements List<T> // your List interface must be in same dir
 {
 
     // instance vars
@@ -62,11 +62,11 @@ public class LList implements List // your List interface must be in same dir
         return true;
     }
 
-    public String get(int index) {
+    public T get(int index) {
         if (index < 0 || index >= size())
             throw new IndexOutOfBoundsException();
 
-        String retVal;
+        T retVal;
         DLLNode tmp = _head; // create alias to head
 
         // walk to desired node
@@ -74,11 +74,11 @@ public class LList implements List // your List interface must be in same dir
             tmp = tmp.getNext();
 
         // check target node's cargo hold
-        retVal = tmp.getCargo();
+        retVal = (T) tmp.getCargo();
         return retVal;
     }
 
-    public String set(int index, String newVal) {
+    public T set(int index, T newVal) {
 
         if (index < 0 || index >= size())
             throw new IndexOutOfBoundsException();
@@ -90,7 +90,7 @@ public class LList implements List // your List interface must be in same dir
             tmp = tmp.getNext();
 
         // store target node's cargo
-        String oldVal = tmp.getCargo();
+        T oldVal = (T) tmp.getCargo();
 
         // modify target node's cargo
         tmp.setCargo(newVal);
@@ -144,18 +144,18 @@ public class LList implements List // your List interface must be in same dir
     }
 
     // remove node at pos index, return its cargo
-    public String remove(int index) {
+    public T remove(int index) {
 
         if (index < 0 || index >= size())
             throw new IndexOutOfBoundsException();
 
-        String retVal;
+        T retVal;
         DLLNode tmp = _head; // create alias to head
 
         // if index==0, remove head node
         if (index == 0) {
             // check target node's cargo hold
-            retVal = _head.getCargo();
+            retVal = (T) _head.getCargo();
 
             // remove target node
             _head = _head.getNext();
@@ -165,7 +165,7 @@ public class LList implements List // your List interface must be in same dir
                 tmp = tmp.getNext();
 
             // check target node's cargo hold
-            retVal = tmp.getNext().getCargo();
+            retVal = (T) tmp.getNext().getCargo();
 
             // remove target node
 
@@ -244,6 +244,20 @@ public class LList implements List // your List interface must be in same dir
 
         System.out.println("...after remove(0): " + james.remove(0));
         System.out.println(james);
+    }
+
+    @Override
+    public void add(int index, T newVal) {
+        // TODO Auto-generated method stub
+        DLLNode tmp = new DLLNode(null, newVal, _head);
+        if (_head != null) {
+            _head.setPrev(tmp);
+        }
+        _head = tmp;
+        if (_tail == null) {
+            _tail = tmp;
+        }
+        _size++;
     }
 
 }// end class LList
