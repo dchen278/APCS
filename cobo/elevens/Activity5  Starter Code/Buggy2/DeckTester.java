@@ -1,6 +1,12 @@
 /**
  * This is a class that tests the Deck class using assert statements.
  */
+
+ /**
+ 	method: testEmpty()
+  perhaps the starting index for an iterator is not right
+ **/
+
 public class DeckTester {
 
 	/**

@@ -1,6 +1,13 @@
 /**
  * This is a class that tests the Deck class using assert statements.
  */
+
+ /**
+ 	method: shuffle()
+  maybe the direction of shuffling was incorrect
+ **/
+
+
 public class DeckTester {
 
 	/**

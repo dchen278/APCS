@@ -1,6 +1,13 @@
 /**
  * This is a class that tests the Deck class using assert statements.
  */
+
+ /**
+ 	method: deal()
+  perhaps size is decremented first in deal
+ **/
+
+
 public class DeckTester {
 
 	/**

@@ -1,6 +1,12 @@
 /**
  * This is a class that tests the Deck class using assert statements.
  */
+
+/**
+	method: testEmpty()
+ 	a possible error could be that izEmpty() checks for size < 0
+**/
+
 public class DeckTester {
 
 	/**
