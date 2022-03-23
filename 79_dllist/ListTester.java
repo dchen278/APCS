@@ -6,17 +6,16 @@
  *  overriding List interface from standard Java library
  **/
 
-public class ListTester<T>
+public class ListTester
 {
   public static void main( String[] args )
   {
 
     //instantiate... var type List, obj type LList
-    LList<T> wu = new LList<T>();
+    List wu = new LList();
 
     System.out.println(wu);
     wu.add("RZA");
-    wu.add(1);
 
     System.out.println(wu);
     wu.add("GZA");
@@ -44,7 +43,7 @@ public class ListTester<T>
     for( int i=0; i<7; i++ ) {
       int n = (int)( wu.size() * Math.random() );
       String imposter = "@";
-      System.out.println("adding a poser at index " + n + "...");
+      System.out.println("adding imposter at index " + n + "...");
       wu.add( n, imposter );
       System.out.println("Updated list: " + wu);
     }
