@@ -1,4 +1,10 @@
 
+// A Dog's Dream (David Chen + Daniel Jung + Abdullah Faraque)
+// APCS pd8
+// HW81: Thank You, Next
+// 2022-03-24r
+// time spent: 0.5 hrs
+
 /***
  * class ItrWork
  *  SKELETON
@@ -7,13 +13,24 @@
 
 /***
     DISCO
-
+      - Iterator is generically typed
     QCC
+      - what is the meaning of life
 
     SUMMARY THE FIRST:
 
+    Iterator is an Interface that allows us to obtain one element at a time.
+    hasNext() returns true if the collection has more elements.
+    remove() removes the current element
+    next() returns the next element
+
     SUMMARY THE SECOND:
 
+    ItrWork allows to use methods such as foundA and foundB to indicate whether a key
+    is present in a collection. odd() returns a list of all odd numbers and even() returns
+    all even numbers. removeEvens() returns the list without all the evens. There are, however,
+    different ways of implementing each method, namely using the iterator or doing it wich a FOR-EACH
+    loop
 **/
 
 import java.util.List;
@@ -81,7 +98,7 @@ public class ItrWork {
     while (it.hasNext()) {
       Object num = it.next();
       if ((int) num % 2 == 0) {
-        L.remove(num);
+        it.remove();
       }
     }
   }
