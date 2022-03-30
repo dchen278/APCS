@@ -4,36 +4,33 @@
  * driver/tester for Stack implementations (Linked-list-based, ArrayList-based)
  **/
 
-public class Stckr<Z>
-{
-  public static void main( String[] args )
-  {
+public class Stckr<Z> {
+  public static void main(String[] args) {
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // USAGE: un-comment exactly 1 assignment below
-    // Stack<Z> cakes = new ALStack<Z>();
-    Stack<Z> cakes = new LLStack<Z>();
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Stack<Object> cakes = new ALStack<Object>();
+    Stack<Object> cakes = new LLStack<Object>();
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    cakes.add(9392);
-    System.out.println(cakes);
-    cakes.add("pog");
-    System.out.println(cakes);
-    cakes.add(false);
-    System.out.println(cakes);
-    cakes.add(2.3);
-    System.out.println(cakes);
-    cakes.add('a');
-    System.out.println(cakes);
-    cakes.add("sadbgasihdgasiudgasugbdabsakjs");
-    System.out.println(cakes);
+    cakes.push(9392);
+    cakes.push("pog");
+    cakes.push(false);
+    cakes.push(2.3);
+    cakes.push('a');
+    cakes.push("sadbgasihdgasiudgasugbdabsakjs");
 
-    cakes.pop();
-    System.out.println(cakes);
+    for (int i = 0; i < 10; i++) {
+      cakes.push(i * 10);
+    }
 
+    while (!cakes.isEmpty()) {
+      System.out.println(cakes.peekTop());
+      cakes.pop();
+    }
 
-    //...
+    // ...
 
-  }//end main
+  }// end main
 
-}//end class
+}// end class
