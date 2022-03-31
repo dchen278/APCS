@@ -17,6 +17,7 @@ public class LLStack<PANCAKE> implements Stack<PANCAKE> {
         return stack.get(stack.size() - 1);
     }
 
+
     public void push(PANCAKE pancake) {
         stack.add(pancake);
     }
