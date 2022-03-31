@@ -22,7 +22,7 @@
  * current element.
  * 5. Lastly we pop.
  *
- * STACK OF CHOICE: ____ by _____
+ * STACK OF CHOICE: Stack by AlStack
  * b/c we don't reaaly need the linked functionality of the LLStack.
  **/
 
