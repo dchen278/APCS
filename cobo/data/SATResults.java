@@ -1,5 +1,5 @@
 import java.sql.Array;
-
+import java.util.Scanner;
 import core.data.*;
 
 public class SATResults {
@@ -18,9 +18,22 @@ public class SATResults {
         System.out.println("SAT results for " + schoolName);
         for (SAT sat : allSATResults) {
             if (sat.getSchoolName().equals(schoolName)) {
-                System.out.println("  " + sat.getSchoolName() + ": " + sat.getNumOfSATTestTakers() + " "
-                        + sat.getSATCriticalReadingAvgScore() + " " + sat.getSATMathAvgScore());
+                System.out.println("  " + sat.getSchoolName() + ": " + sat.getNumOfSATTakers() + " "
+                        + sat.getAvgReadingScore() + " " + sat.getAvgMathScore());
             }
         }
+
+        // in an unsorted dataset, find the school with the highest math score
+        int highestMathScore = allSATResults.get(0).getAvgMathScore();
+        String highestMathSchool = allSATResults.get(0).getSchoolName();
+        
+        for (SAT sat : allSATResults) {
+            int mathScore = sat.getAvgMathScore();
+            if (mathScore > highestMathScore) {
+                highestMathScore = mathScore;
+                highestMathSchool = sat.getSchoolName();
+            }
+        }
+        System.out.println("The highest math score is " + highestMathScore + " for " + highestMathSchool);
     }
 }
