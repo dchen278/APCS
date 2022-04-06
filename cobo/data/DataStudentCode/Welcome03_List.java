@@ -38,7 +38,7 @@ public class Welcome03_List {
             name = ws.getName();
          }
 
-         System.out.println("The southern most weeather station is " + name);
+         System.out.println("The southern most weather station is " + name);
       }
 
    }
