@@ -1,6 +1,7 @@
 import java.sql.Array;
 import java.util.Scanner;
 import core.data.*;
+import java.util.ArrayList;
 
 public class SATResults {
     public static void main(String[] args) {
