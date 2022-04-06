@@ -8,7 +8,7 @@ public class SATResults {
         DataSource ds = DataSource.connect("https://data.cityofnewyork.us/api/views/f9bf-2cp4/rows.xml");
         ds.setCacheTimeout(15 * 60);
         ds.load();
-        ArrayList<SAT> allSATResults = ds.fetchList("SATResults", "row/dbn", "row/school_name", "row/num_of_sat_test_takers", "row/sat_critical_reading_avg_score", "row/sat_math_avg_score");
+        ArrayList<SAT> allSATResults = ds.fetchList("SAT", "row/dbn", "row/school_name", "row/num_of_sat_test_takers", "row/sat_critical_reading_avg_score", "row/sat_math_avg_score");
 
         System.out.println("Total schools: " + allSATResults.size());
 
