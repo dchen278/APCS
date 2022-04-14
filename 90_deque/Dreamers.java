@@ -6,7 +6,55 @@
 
 import java.util.LinkedList;
 
-public class Dreamers<D> implements Deque<D> {
+public class Dreamers<T> implements Deque<T> {
 
-    // TO BE CONTINUED TMMR !!!! (but it shouldnt be too hard ;)
+    LinkedList<T> dreamer;
+
+    public Dreamers() {
+        dreamer = new LinkedList<T>();
+    }
+
+    public boolean add(T x) {
+        return dreamer.add(x);
+    }
+
+    public void addFirst(T x) {
+        dreamer.addFirst(x);
+    }
+
+    public void addLast(T x) {
+        dreamer.addLast(x);
+    }
+
+    public T peek() {
+        return dreamer.peek();
+    }
+
+    public T peekFirst() {
+        return dreamer.peekFirst();
+    }
+
+    public T peekLast() {
+        return dreamer.peekLast();
+    }
+
+    public boolean isEmpty() {
+        return dreamer.size() == 0;
+    }
+
+    public T remove() {
+        return dreamer.remove();
+    }
+
+    public T removeFirst() {
+        return dreamer.removeFirst();
+    }
+
+    public T removeLast() {
+        return dreamer.removeLast();
+    }
+
+    public int size() {
+        return dreamer.size();
+    }
 }

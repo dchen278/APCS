@@ -4,13 +4,13 @@
 //2022-04-13W
 //time spent: 0.5 hours
 
-public class Deque<T> {
+public interface Deque<T> {
 
-    public boolean add(T x);
+    public boolean add(T x);  
 
     public void addFirst(T x);
 
-    public void addLast(T x);
+    public void addLast(T x);  
 
     public T peek();
 
@@ -19,12 +19,12 @@ public class Deque<T> {
     public T peekLast();
 
     public boolean isEmpty();
-
+    
     public T remove();
 
     public T removeFirst();
 
-    public T removeLast();
+    public T removeLast();    
 
     public int size();
 }
