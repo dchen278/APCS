@@ -1,3 +1,9 @@
+//A Dog's Dream: Abdullah Faruque, David Chen, Daniel Jung
+//APCS pd08
+//HW95: Algorithm as Data Structure
+//2022-05-09M
+//time spent: 0.5 hours
+
 /**
  * class TreeNode
  * SKELETON
