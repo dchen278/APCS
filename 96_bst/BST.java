@@ -1,7 +1,7 @@
 //A Dog's Dream: Abdullah Faruque, David Chen, Daniel Jung
 //APCS pd08
-//HW95: Algorithm as Data Structure
-//2022-05-09M
+// HW96 -- BSTs is the Perfect Place for Shade
+//2022-05-10
 //time spent: 0.5 hours
 
 /**
@@ -18,6 +18,7 @@
  *
  * This BST implementation only holds ints (its nodes have int cargo)
  */
+
 
 public class BST {
 
@@ -116,41 +117,65 @@ public class BST {
     }
   }
 
-    /*****************************************************
-     * TreeNode search(int)
-     * returns pointer to node containing target
-     * or null if target not found
-     *****************************************************/
-    TreeNode search( int target )
-    {
-      
-    	/*** YOUR IMPLEMENTATION HERE ***/
+  /*****************************************************
+   * TreeNode search(int)
+   * returns pointer to node containing target
+   * or null if target not found
+   *****************************************************/
+  TreeNode search(int target) {
+    return searchHelper(_root, target);
+  }
+
+  TreeNode searchHelper(TreeNode currNode, int target) {
+    if (currNode == null) {
+      return null;
     }
 
-
-    /*****************************************************
-     * int height()
-     * returns height of this tree (length of longest leaf-to-root path)
-     * eg: a 1-node tree has height 1
-     *****************************************************/
-    public int height()
-    {
-      //go down to the leaf, 
-    	/*** YOUR IMPLEMENTATION HERE ***/
+    if (currNode.getValue() < target) {
+      return searchHelper(currNode.getRight(), target);
+    } else if (currNode.getValue() > target) {
+      return searchHelper(currNode.getLeft(), target);
+    } else {
+      return currNode;
     }
+  }
 
 
-    /*****************************************************
-     * int numLeaves()
-     * returns number of leaves in tree
-     *****************************************************/
-    public int numLeaves()
-    {
-    //go through whole tree, when u encounter a node with no children, ++ to the counter.
-    	/*** YOUR IMPLEMENTATION HERE ***/
+  /*****************************************************
+   * int height()
+   * returns height of this tree (length of longest leaf-to-root path)
+   * eg: a 1-node tree has height 1
+   *****************************************************/
+  public int height() {
+    // go down to the leaf,
+    return heightHelper(_root);
+  }
+
+  public int heightHelper(TreeNode currNode) {
+    if (currNode == null) {
+      return 0;
+    } else {
+      return 1 + Math.max(heightHelper(currNode.getLeft()), heightHelper(currNode.getRight()));
     }
+  }
 
+  /*****************************************************
+   * int numLeaves()
+   * returns number of leaves in tree
+   *****************************************************/
+  public int numLeaves() {
+    return numLeavesHelper(_root);
+  }
 
+  public int numLeavesHelper(TreeNode currNode) {
+    if (currNode == null) {
+      return 0;
+    } else if (currNode.getLeft() == null && currNode.getRight() == null) {
+      return 1;
+    } else {
+      return numLeavesHelper(currNode.getLeft()) + numLeavesHelper(currNode.getRight());
+    }
+  }
 
   // ~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
