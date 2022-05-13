@@ -1,7 +1,7 @@
 //A Dog's Dream: Abdullah Faruque, David Chen, Daniel Jung
 //APCS pd08
-// HW96 -- BSTs is the Perfect Place for Shade
-//2022-05-10
+// HW97: Prune Your Tree
+//2022-05-11
 //time spent: 0.5 hours
 
 /**
@@ -18,7 +18,6 @@
  *
  * This BST implementation only holds ints (its nodes have int cargo)
  */
-
 
 public class BST {
 
@@ -140,7 +139,6 @@ public class BST {
     }
   }
 
-
   /*****************************************************
    * int height()
    * returns height of this tree (length of longest leaf-to-root path)
@@ -174,6 +172,32 @@ public class BST {
       return 1;
     } else {
       return numLeavesHelper(currNode.getLeft()) + numLeavesHelper(currNode.getRight());
+    }
+  }
+
+  // ALGO:
+  public TreeNode remove(int target) {
+    TreeNode parent = _root;
+    TreeNode child = null;
+
+    if (_root.getLeft() == null && _root.getRight() == null) {
+      if (parent == _root) {
+        _root = null;
+      } else if (child.getLeft() == parent) {
+        child.setLeft(null);
+      } else {
+        child.setRight(null);
+      }
+    }
+  }
+
+  public TreeNode removeHelper(TreeNode currNode, int target) {
+    if (targetNode == null) {
+      return null;
+    } else if (targetNode.getRight() == null && targetNode.getLeft() == null) {
+
+    } else if (targetNode.getRight() == null || targetNode.getLeft() == null) {
+
     }
   }
 
