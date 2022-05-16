@@ -9,25 +9,51 @@ public class ArrayPriorityQueue implements PriorityQueue{
     }
 
     //O(1)
-    public Integer peekMin() {
+    public int peekMin() {
         return bruv.get(bruv.size()-1);
     }
 
     //O(1)
-    public void removeMin() {
-        bruv.remove(bruv.size()-1);
+    public int removeMin() {
+        return bruv.remove(bruv.size()-1);
     }
 
     //O(n)
-    public void add(Integer value) {
-        if (bruv.isEmpty()) {
-            bruv.add(value);
-        } else {
-            for (int i = 0; i < bruv.size(); i++) {
-                if (value > bruv.get(i)) {
-                    bruv.add(value, i);
-                }
+    public void add(int value) {
+        // add in order of priority
+        for (int i = 0; i < bruv.size(); i++) {
+            if (value < bruv.get(i)) {
+                bruv.add(i, value);
+                return;
             }
         }
+        bruv.add(value);        
+    }
+
+    public static void main(String[] args) {
+        ArrayPriorityQueue test = new ArrayPriorityQueue();
+        test.add(5);
+        test.add(10);
+        test.add(4);
+        test.add(3);
+        test.add(29);
+        test.add(2);
+
+
+
+        System.out.println("min: " + test.peekMin());
+        System.out.println("removing min: " + test.removeMin());
+        System.out.println("min: " + test.peekMin());
+        System.out.println("removing min: " + test.removeMin());
+
+        System.out.println("min: " + test.peekMin());
+        System.out.println("removing min: " + test.removeMin());
+        System.out.println("min: " + test.peekMin());
+
+        System.out.println("removing min: " + test.removeMin());
+        System.out.println("min: " + test.peekMin());
+        System.out.println("removing min: " + test.removeMin());
+        System.out.println("min: " + test.peekMin());
+        System.out.println("removing min: " + test.removeMin());
     }
 }
